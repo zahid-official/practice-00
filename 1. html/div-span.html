@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Div and Span</title>
+
+    <style>
+        .div{
+            width: 50%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: antiquewhite;
+        }
+        span{
+            color: red;
+            padding: 20px; /* top & bottom padding not applied because it's inline element*/
+        }
+
+
+        .container1,.container2,.container3,.container4{
+            height: 30vh;
+            background-color: rebeccapurple;
+        }
+        /* float */
+        .item{
+            float: left;
+            width: 30%;
+            margin: 20px 30px;
+            background-color: darkgrey;
+        }
+
+        /* flex */
+        .container2{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: beige;
+        }
+        .box{
+            margin: 20px 30px;
+            background-color: cadetblue;
+        }
+        
+        /* inline */
+        .product{
+            width: 30%;
+            margin: 20px 30px;
+            display: inline-block;
+            background-color: chocolate;
+        }
+
+        /* Grid  */
+        .container4{
+            display: grid;
+            align-items: center;
+            grid-template-columns: 30% 30% 30%;
+            background-color: beige;
+        }
+        .unit{
+            margin: 20px 30px;
+            background-color: rgb(52, 112, 92);
+        }
+    </style>
+</head>
+<body>
+    <div class="div">
+        <p>A block-level element always starts on a new line, and the browsers automatically add some space <span>(a margin)</span> before and after the element.A block-level element always takes up the full width available (stretches out to the left and right as far as it can).The <b>div</b> element defines a division or a section in an HTML document.</p> 
+
+        <ul>
+            <li>A block-level element always starts on a new line and takes up the full width available</li>
+
+            <li>An inline element does not start on a new line and it only takes up as much width as necessary</li>
+
+            <li>The div element is a block-level and is often used as a container for other HTML elements</li>
+
+            <li>The span element is an inline container used to mark up a part of a text, or a part of a document</li>
+        </ul>
+    </div>
+
+    <h2>There are different methods for aligning elements side by side</h2>
+    <ul>
+        <li>Float</li>
+        <li>Display: flex</li>
+        <li>Inline-block</li>
+        <li>Grid</li>
+    </ul>
+    <br>
+
+    <h3>Example: Float</h3>
+    <div class="container1">
+        <div class="item">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum doloremque nobis fugiat mollitia molestias atque ab, vero iusto ea exercitationem nihil aliquam modi harum, consectetur accusamus perferendis dicta nemo amet molestiae? Voluptatem veritatis quibusdam, voluptatum similique quo unde aperiam culpa quos explicabo esse accusantium ducimus, doloremque repudiandae voluptate. Amet, officia?</p>
+        </div>
+        <div class="item">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum doloremque nobis fugiat mollitia molestias atque ab, vero iusto ea exercitationem nihil aliquam modi harum, consectetur accusamus perferendis dicta nemo amet molestiae? Voluptatem veritatis quibusdam, voluptatum similique quo unde aperiam culpa quos explicabo esse accusantium ducimus, doloremque repudiandae voluptate. Amet, officia?</p>
+        </div>
+        <div class="item">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum doloremque nobis fugiat mollitia molestias atque ab, vero iusto ea exercitationem nihil aliquam modi harum, consectetur accusamus perferendis dicta nemo amet molestiae? Voluptatem veritatis quibusdam, voluptatum similique quo unde aperiam culpa quos explicabo esse accusantium ducimus, doloremque repudiandae voluptate. Amet, officia?</p>
+        </div>
+    </div>
+
+    <div class="container2">
+        <div class="box">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum doloremque nobis fugiat mollitia molestias atque ab, vero iusto ea exercitationem nihil aliquam modi harum, consectetur accusamus perferendis dicta nemo amet molestiae? Voluptatem veritatis quibusdam, voluptatum similique quo unde aperiam culpa quos explicabo esse accusantium ducimus, doloremque repudiandae voluptate. Amet, officia?</p>
+        </div>
+        <div class="box">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum doloremque nobis fugiat mollitia molestias atque ab, vero iusto ea exercitationem nihil aliquam modi harum, consectetur accusamus perferendis dicta nemo amet molestiae? Voluptatem veritatis quibusdam, voluptatum similique quo unde aperiam culpa quos explicabo esse accusantium ducimus, doloremque repudiandae voluptate. Amet, officia?</p>
+        </div>
+        <div class="box">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum doloremque nobis fugiat mollitia molestias atque ab, vero iusto ea exercitationem nihil aliquam modi harum, consectetur accusamus perferendis dicta nemo amet molestiae? Voluptatem veritatis quibusdam, voluptatum similique quo unde aperiam culpa quos explicabo esse accusantium ducimus, doloremque repudiandae voluptate. Amet, officia?</p>
+        </div>
+    </div>
+    
+    <div class="container3">
+        <div class="product">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum doloremque nobis fugiat mollitia molestias atque ab, vero iusto ea exercitationem nihil aliquam modi harum, consectetur accusamus perferendis dicta nemo amet molestiae? Voluptatem veritatis quibusdam, voluptatum similique quo unde aperiam culpa quos explicabo esse accusantium ducimus, doloremque repudiandae voluptate. Amet, officia?</p>
+        </div>
+        <div class="product">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum doloremque nobis fugiat mollitia molestias atque ab, vero iusto ea exercitationem nihil aliquam modi harum, consectetur accusamus perferendis dicta nemo amet molestiae? Voluptatem veritatis quibusdam, voluptatum similique quo unde aperiam culpa quos explicabo esse accusantium ducimus, doloremque repudiandae voluptate. Amet, officia?</p>
+        </div>
+        <div class="product">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum doloremque nobis fugiat mollitia molestias atque ab, vero iusto ea exercitationem nihil aliquam modi harum, consectetur accusamus perferendis dicta nemo amet molestiae? Voluptatem veritatis quibusdam, voluptatum similique quo unde aperiam culpa quos explicabo esse accusantium ducimus, doloremque repudiandae voluptate. Amet, officia?</p>
+        </div>
+    </div>
+
+    <div class="container4">
+        <div class="unit">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum doloremque nobis fugiat mollitia molestias atque ab, vero iusto ea exercitationem nihil aliquam modi harum, consectetur accusamus perferendis dicta nemo amet molestiae? Voluptatem veritatis quibusdam, voluptatum similique quo unde aperiam culpa quos explicabo esse accusantium ducimus, doloremque repudiandae voluptate. Amet, officia</p>
+        </div>
+        <div class="unit">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum doloremque nobis fugiat mollitia molestias atque ab, vero iusto ea exercitationem nihil aliquam modi harum, consectetur accusamus perferendis dicta nemo amet molestiae? Voluptatem veritatis quibusdam, voluptatum similique quo unde aperiam culpa quos explicabo esse accusantium ducimus, doloremque repudiandae voluptate. Amet, officia</p>
+        </div>
+        <div class="unit">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum doloremque nobis fugiat mollitia molestias atque ab, vero iusto ea exercitationem nihil aliquam modi harum, consectetur accusamus perferendis dicta nemo amet molestiae? Voluptatem veritatis quibusdam, voluptatum similique quo unde aperiam culpa quos explicabo esse accusantium ducimus, doloremque repudiandae voluptate. Amet, officia</p>
+        </div>
+    </div>
+</body>
+</html>
