@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    <form action="">
+        <label for="name">Your Name
+            <input type="text" id="name" required>
+        </label><br><br>
+        <label for="email">Your Email
+            <input type="email" id="email" required>
+        </label><br><br>
+        <label for="pass">Password
+            <input type="password" id="pass">
+        </label><br><br>
+        
+        
+        <select value="Country">
+            <option name="select" id="" value="select" selected>Select Country</option>
+            <optgroup label="Muslim">
+                <option name="bd" id="" value="bd">Bangladesh</option>
+                <option name="pk" id="" value="pk">Pakistan</option>
+            </optgroup>
+            <optgroup label="Non-Muslim">
+                <option name="in" id="" value="in">India</option>
+                <option name="sri" id="" value="sri">Sri-Lanka</option>
+                <option name="ca" id="" value="ca">Canada</option>
+            </optgroup>
+        </select><br><br>
+
+        <fieldset>
+            <legend>Gender</legend>
+            <label for="male">
+                <input type="radio" id="male" name="gender"> Male <br>
+            </label>
+            <label for="fmale">
+                <input type="radio" id="fmale" name="gender"> Female<br>
+            </label>
+            <label for="cus">
+                <input type="radio" id="cus" name="gender" disabled> Custom
+            </label>
+        </fieldset><br>
+
+        <fieldset>
+            <legend>Job Post</legend>
+            <label for="webdev">
+                <input type="checkbox" name="webdev" id="webdev"> Web Developer <br>
+            </label>
+            <label for="web">
+                <input type="checkbox" name="web" id="web"> Web Degisner <br>
+            </label>
+            <label for="Degisner">
+                <input type="checkbox" name="Degisner" id="webdev"> Graphics Degisner 
+            </label>
+        </fieldset><br>
+
+        <fieldset>
+            <legend>Text Your Message</legend>
+            <textarea name="" id="" cols="100" rows="5"></textarea>
+        </fieldset><br>
+        <input type="image" src="images/giphy.webp" alt="submit" width="80">
+    </form>
+</body>
+</html>
+
