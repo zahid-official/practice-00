@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Query</title>
+    <style>
+        .container{
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: rebeccapurple;
+        }
+        .box2{
+            background-color: rgb(19, 50, 107);
+        }
+        
+        @media screen and (max-width: 992px) {
+            .box2{
+                background-color: black;
+            }
+        }
+        @media screen and (max-width: 768px) {
+            .box2{
+                display: none;
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="box"></div>
+        <div class="box box2"></div>
+        <div class="box"></div>
+        <div class="box box2"></div>
+        <div class="box"></div>
+    </div>
+</body>
+</html>
