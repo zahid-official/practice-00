@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background</title>
+    
+    <style>
+        div{
+            width: 80%;
+            padding: 50px;
+            margin: 20px;
+        }
+
+        .background-color{
+            opacity: .8;
+            background-color: bisque;
+        }
+
+        .background-rgba{
+            background-color: rgba(0, 38, 128, 0.514);
+        }
+
+        .linear-gradients{
+            background-image: linear-gradient(to left bottom,rgb(3, 4, 94), rgb(2, 62, 138), rgba(30, 95, 145, 0.925), #1a759f, #0095c7ad, #52b69a5d);
+        }
+        .radial-gradients{
+            background-image: radial-gradient(circle at 50% 50% ,rgb(12, 129, 150), rgb(89, 0, 255),rgb(79, 223, 187));
+        }
+        .conic-gradients{
+            background-image: conic-gradient(from 45deg at 25% 55%, #00296b, #0a9396, #f08080);
+        }
+        .repeation-gradients{
+            background-image: repeating-conic-gradient(red 10deg, blue 25deg,blue 35deg, yellow 35deg, yellow 45deg);
+        }
+
+        .background-image{
+            background-image: url("images/2.jpeg");
+        }
+
+    </style>
+</head>
+<body>
+    <div class="background-color">
+        <h2>Background Color</h2>
+        <p>The background-color property specifies the background color of an element. The background of an element is the total size of the element, including padding and border (but not the margin). <br><b>Tip:</b> Use a background color and a text color that makes the text easy to read.
+        </p>
+
+        <h3>Opacity/ Transparency</h3>
+        <p>The opacity property specifies the opacity/transparency of an element. It can take a value from 0.0 - 1.0 The lower value, the more transparent</p>
+        <p> <b>Note:</b> When using the opacity property to add transparency to the background of an element, all of its child elements inherit the same transparency. This can make the text inside a fully transparent element hard to read.</p>
+    </div>
+    <div class="background-rgba">
+        <h2>Transparency using RGBA</h2>
+        <p>If you do not want to apply opacity to child elements, use RGBA color values.RGB color value with an alpha channel (RGBA) specifies the opacity for a color. The alpha parameter is a number between 0.0 (fully transparent) and 1.0 (fully opaque)</p>
+    </div>
+
+    <div class="linear-gradients">
+        <h2> Linear Gradients</h2>
+        <p>CSS gradients let you display smooth transitions between two or more specified colors.</p>
+        <p>To create a linear gradient you must define at least two color stops. Color stops are the colors you want to render smooth transitions among. You can also set a starting point and a direction (or an angle) along with the gradient effect. by Default a linear gradient starts at the top and ends at the bottom </p>
+    </div>
+    
+    <div class="radial-gradients">
+        <h2>Radial Gradients</h2>
+        <p>To create a radial gradient you must also define at least two color stops. by Default radial gradient shape is ellipse, size is farthest-corner and position is center.</p>
+        <p>The size parameter defines the size of the gradient. It can take four values: 1.closest-side 2.farthest-side 3.closest-corner 4.farthest-corner</p>
+    </div>
+
+    <div class="conic-gradients">
+        <h2>Conic Gradients</h2>
+        <p>A conic gradient is a gradient with color transitions rotated around a center point. To create a conic gradient you must define at least two colors. By default, angle is 0deg and position is center. If no degree is specified, the colors will be spread equally around the center point.</p>
+    </div>
+
+    <div class="repeation-gradients">
+        <h2>Repeating Gradients</h2>
+        <p>The repeating-linear-gradient() function is used to repeat linear gradients.</p>
+    </div>
+
+    <div class="background-image">
+        <h2>Background Image</h2>
+        <p>The background-image property specifies an image to use as the background of an element. by Default No background image will be displayed. The 'url' used to set the path of an image. To specify more than one image, separate the URLs with a , comma </p>
+        <p> <b>Note:</b> When using a background image, use an image that does not disturb the text.</p>
+    </div>
+</body>
+</html>
