@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Size</title>
+
+    <style>
+        div{
+            height: 100vh;
+            margin: 40px 10px;
+            padding: 20px;
+            color: rgb(250, 239, 238);
+            background-color: rgb(0, 83, 104);
+        }
+
+        .background-size{
+            background-image: url("images/1.webp");
+            background-repeat: no-repeat;
+            background-size: auto;
+        }
+
+        .cover-size{
+            background-image: url("images/1.webp");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .contain-size{
+            background-image: url("images/1.webp");
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+
+        .set-value-size{
+            background-image: url("images/1.webp");
+            background-repeat: no-repeat;
+            background-size: 30% 360px 10%;
+        }
+    </style>
+</head>
+<body>
+    <div class="background-size">
+        <h2>This is Background Size</h2>
+        <p>The background-size property specifies the size of the background images.</p>
+        <p>There are four different syntaxes you can use with this property: the keyword syntax ("auto", "cover" and "contain"), the one-value syntax sets the width of the image (height becomes "auto"), the two-value syntax (first value: width of the image, second value: height), and the multiple background syntax (separated with comma)</p>
+        <p>by Default The, background image size is auto.It displayed background image in its original size</p>
+    </div>
+
+    <div class="cover-size">
+        <h2>This is Background Size Cover</h2>
+        <p>Resize the background image to cover the entire container, even if it has to stretch the image or cut a little bit off one of the edges</p>
+    </div>
+
+    <div class="contain-size">
+        <h2>This is Background Size contain</h2>
+        <p>Resize the background image to make sure the image is fully visible</p>
+    </div>
+
+    <div class="set-value-size">
+        <h2>This is Background Size Set Value of Height and Width </h2>
+        <p>Sets the width and height of the background image in percent or pixel. The first value sets the width, the second value sets the height. If only one value is given, the second is set to "auto"</p>
+    </div>
+</body>
+</html>
