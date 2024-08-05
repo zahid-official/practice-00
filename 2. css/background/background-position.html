@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Position</title>
+
+    <style>
+        div{
+            height: 100vh;
+            margin: 40px 10px;
+            padding: 20px;
+            color: rgb(250, 239, 238);
+            background-color: rgb(0, 83, 104);
+        }
+
+        .background-position{
+            background-image: url('images/1.webp');
+            background-repeat: no-repeat;
+            background-position: bottom right;
+        }
+
+        .percentage-position{
+            background-image: url('images/1.webp');
+            background-repeat: no-repeat;
+            background-position: 75% 60%;
+        }
+
+        .pixel-position{
+            background-image: url('images/1.webp');
+            background-repeat: no-repeat;
+            background-position: 50% 80px;
+        }
+    </style>
+</head>
+<body>
+    <div class="background-position">
+        <h2>Background Position</h2>
+        <p>The background image is placed according to the background-position property. If no background-position is specified, the image is always placed at the element's top left corner.</p>
+        <p>The background image is placed in the same place as the text. We want to change the position of the image, so that it does not disturb the text too much.
+        </p>
+
+        <ul>
+            <li>left top</li>
+            <li>left center</li>
+            <li>left bottom</li>
+            <li>center top</li>
+            <li>center center</li>
+            <li>center bottom</li>
+            <li>right top</li>
+            <li>right center</li>
+            <li>right bottom</li>
+            <li>If you only specify one keyword, the other value will be "center"</li>
+        </ul>
+    </div>
+
+    <div class="percentage-position">
+        <h2>Position in Percentage</h2>
+        <p>The first value is the horizontal position and the second value is the vertical. The top left corner is 0% 0%. The right bottom corner is 100% 100%. If you only specify one value, the other value will be 50%. Default value is: 0% 0%</p>
+    </div>
+
+    <div class="pixel-position">
+        <h2>Position in Pixel</h2>
+        <p>The first value is the horizontal position and the second value is the vertical. The top left corner is 0 0. Units can be pixels (0px 0px) or any other CSS units. If you only specify one value, the other value will be 50%. You can mix % and positions</p>
+    </div>
+</body>
+</html>
