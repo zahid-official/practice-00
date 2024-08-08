@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Blend Mode</title>
+
+    <style>
+        div{
+            height: 60vh;
+            margin: 40px 10px;
+            padding: 20px;
+            background-image: linear-gradient(to right,rgb(255, 166, 0), rgba(255, 255, 0, 0.014)), url('images/bg5.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        
+        .background-blend{
+            background-blend-mode: normal;
+        }
+        .background-multiply{
+            background-blend-mode: multiply;
+        }
+        .background-screen{
+            background-blend-mode: screen;
+        }
+        .background-overlay{
+            background-blend-mode: overlay;
+        }
+        .background-darken{
+            background-blend-mode: darken;
+        }
+        .background-lighten{
+            background-blend-mode: lighten;
+        }
+        .background-color-dodge{
+            background-blend-mode: color-dodge;
+        }
+        .background-saturation{
+            background-blend-mode: saturation;
+        }
+        .background-color{
+            background-blend-mode: color;
+        }
+        .background-luminosity{
+            background-blend-mode: luminosity;
+        }
+        .background-image{
+            height: 100vh;
+            background-color: white;
+            background-image: url('images/bg5.jpg'), url('images/bg4.jpg');
+            background-size: cover;
+            background-blend-mode: multiply;
+        }
+    </style>
+</head>
+<body>
+    <div class="background-blend">
+        <h2>This is Background Blend</h2>
+        <p>The background-blend-mode property defines the blending mode of each background layer (color and/or image)</p>
+        <p>By default the blending mode sets to normal. In this mode the background-color will not bleed through the background-image.</p>
+    </div>
+
+    <div class="background-multiply">
+        <h2>This is Background Multiply</h2>
+        <p>In this mode the background-color are multiplied and typically this leads to a darker image than before.</p>
+    </div>
+
+    <div class="background-screen">
+        <h2>This is Background screen</h2>
+        <p>In this mode both image and color is inverted, multiplied and then inverted again</p>
+    </div>
+
+    <div class="background-overlay">
+        <h2>This is Background overlay</h2>
+        <p>In this mode  the background-color is mixed with the background-image to reflect the lightness or darkness of the backdrop</p>
+    </div>
+
+    <div class="background-darken">
+        <h2>This is Background darken</h2>
+        <p>In this mode if the background-image is darker than the background-color then the image is replaced, otherwise it is left as it was</p>
+    </div>
+
+    <div class="background-lighten">
+        <h2>This is Background lighten</h2>
+        <p>In this mode  if the background-image is lighter than the background-color then the image is replaced, otherwise it is left as it was.</p>
+    </div>
+
+    <div class="background-color-dodge">
+        <h2>This is Background color-dodge</h2>
+        <p>In this mode  the background-color is divided by the inverse of the background-image. This is very similar to the screen blend mode.</p>
+    </div>
+
+    <div class="background-saturation">
+        <h2>This is Background saturation</h2>
+        <p>In this modekeeps the saturation of the background-image whilst mixing the hue and luminosity of the background-color.</p>
+    </div>
+
+    <div class="background-color">
+        <h2>This is Background color</h2>
+        <p>In this mode keeps hue and saturation of background-image and the luminosity of the background-color. In this example because the image is gray and the effect preserves gray levels all we get is a big gray blob</p>
+    </div>
+
+    <div class="background-luminosity">
+        <h2>This is Background luminosity</h2>
+        <p>In this mode luminosity of the top color is preserved whilst using the saturation and hue of the background-color.</p>
+    </div>
+
+    <div class="background-image">
+        <h2>This is Background luminosity</h2>
+        <p>In this mode luminosity of the top color is preserved whilst using the saturation and hue of the background-color.</p>
+    </div>
+</body>
+</html>
