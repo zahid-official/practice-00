@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Origin</title>
+
+    <style>
+        div{
+            height: 100vh;
+            margin: 40px 10px;
+            padding: 20px;
+            color: rgb(250, 239, 238);
+            background-color: rgb(0, 83, 104);
+            border: 50px dotted rgb(255, 255, 255);
+        }
+
+        .background-origin{
+            background-image: url('images/1.webp');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-origin: padding-box;
+        }
+
+        .border-box-origin{
+            background-image: url('images/1.webp');
+            background-origin: border-box;
+        }
+
+        .content-box-origin{
+            background-image: url('images/1.webp');
+            background-origin: content-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="background-origin">
+        <h2>This is Background Origin</h2>
+        <p>The background-origin property specifies the origin position (the background positioning area) of a background image. </p>
+        <p> <b>Note:</b> This property has no effect if background-attachment is "fixed".</p>
+        <p> by Default The background image origin value is padding-box. It starts from the upper left corner of the padding edge</p>
+    </div>
+
+    <div class="border-box-origin">
+        <h2>This is Background Origin Border Box</h2>
+        <p>The background image starts from the upper left corner of the border</p>
+    </div>
+
+    <div class="content-box-origin">
+        <h2>This is Background Origin Content Box</h2>
+        <p>The background image starts from the upper left corner of the content.</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Clip</title>
+
+    <style>
+        div{
+            height: 100vh;
+            margin: 40px 10px;
+            padding: 20px;
+            color: rgb(250, 239, 238);
+            border: 50px dotted rgb(238, 0, 0);
+        }
+
+        .background-clip{
+            background-color: rgb(0, 83, 104);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-clip: border-box;
+        }
+
+        .border-box-clip{
+            background-color: rgb(0, 83, 104);
+            background-clip:  padding-box;
+        }
+
+        .content-box-clip{
+            background-color: rgb(0, 83, 104);
+            background-clip: content-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="background-clip">
+        <h2>This is Background Clip</h2>
+        <p>The background-clip property defines how far the background (color or image) should extend within an element.</p>
+        <p> by Default The background clip value is border-box. It starts from the upper left corner of the padding edge</p>
+    </div>
+
+    <div class="padding-box-clip">
+        <h2>This is Background Clip Border Box</h2>
+        <p>The background color starts from the upper left corner of the padding</p>
+    </div>
+
+    <div class="content-box-clip">
+        <h2>This is Background Clip Content Box</h2>
+        <p>The background color starts from the upper left corner of the content.</p>
+    </div>
+</body>
+</html>
