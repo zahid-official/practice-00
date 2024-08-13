@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- font-awesome -->
+    <script src="https://kit.fontawesome.com/348b10e1ec.js" crossorigin="anonymous"></script>
+    <!-- daisyUI cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <!-- tailwind cdn -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- tailwind custom config -->
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                clifford: '#da373d',
+                'primary-color': '#ff2e13',
+              }
+            }
+          }
+        }
+      </script>
+    <!-- custom css -->
+     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+        .font-primary{
+            font-family: "Manrope", system-ui;
+        }
+     </style>
+</head>
+<body class="font-primary">
+    <header class="header-area container mx-auto">
+        <nav class="navbar py-8">
+            <div class="flex-1">
+              <div class="dropdown">
+                <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M4 6h16M4 12h8m-8 6h16" />
+                  </svg>
+                </div>
+                <ul
+                  tabindex="0"
+                  class="menu menu-sm dropdown-content text-basebg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                    <li><a href="#" class="hover:text-primary-color">Home</a></li>
+                    <li><a href="#" class="hover:text-primary-color">Shop</a></li>
+                    <li><a href="#" class="hover:text-primary-color">About</a></li>
+                    <li><a href="#" class="hover:text-primary-color">Contact</a></li>
+                </ul>
+              </div>
+              <a class="btn btn-ghost font-extrabold sm:text-5xl text-3xl hover:text-primary-color hover:bg-transparent">Cafeteria</a>
+            </div>
+            <div class="navbar-center hidden lg:flex">
+              <ul class="menu menu-horizontal px-1 text-base">
+                <li><a href="#" class="hover:text-primary-color">Home</a></li>
+                <li><a href="#" class="hover:text-primary-color">Shop</a></li>
+                <li><a href="#" class="hover:text-primary-color">About</a></li>
+                <li><a href="#" class="hover:text-primary-color">Contact</a></li>
+              </ul>
+            </div>
+            <div">
+            
+            <button class="btn text-white bg-gradient-to-r from-[#FF0000] to-[#FF8938]">Order</button>
+            </div>
+        </nav>
+        <!-- navbar ends -->
+         
+        <div class="hero">
+            <div class="hero-content flex-col lg:flex-row-reverse">
+              <div class="relative flex-1">
+                <img src="images/banner.png" class=""/>
+                <div class=" absolute bottom-6 left-36 overlay sm:flex hidden items-center justify-center gap-3 shadow-2xl w-60 p-4 rounded-lg bg-white">
+                    <div class="overlay-icon">
+                        <i class="fa-solid fa-star text-3xl text-amber-400"></i>
+                    </div>
+                    <div class="overlay-text">
+                        <h4 class="text-3xl font-bold">5.00</h4>
+                        <p>Trust Pilot Ratings</p>
+                    </div>
+                </div>
+              </div>
+              <div class="flex-1">
+                <h1 class="sm:text-6xl text-5xl font-extrabold">It's good <br class="xl:block hidden"> tea time at The <br class="xl:block hidden"> Tea House</h1>
+                <p class="py-6 font-semibold text-gray-500">Tea and Botanical Solutions Supplier Give Optimum Satisfaction To Your Taste Buds.</p>
+                <button class="btn text-white bg-gradient-to-r from-[#FF0000] to-[#FF8938]">Get Started  <img src="images/arrow.png" alt="arrow" class="h-3"></button>
+              </div>
+            </div>
+          </div>
+    </header>
+    <!-- header-area-ends -->
+</body>
+</html>
