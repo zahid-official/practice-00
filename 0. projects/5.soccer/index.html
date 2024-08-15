@@ -38,7 +38,7 @@
 </head>
 <body>
     <header class="header-area container mx-auto py-8">
-        <div class="navbar bg-base-100">
+        <nav class="navbar">
             <div class="navbar-start">
               <div class="dropdown">
                 <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
@@ -80,8 +80,52 @@
               <a><i class="fa-solid fa-magnifying-glass mx-6 text-xl cursor-pointer hover:text-primary sm:block" hidden></i></a>
               <a class="btn bg-primary hover:bg-primary-hover text-base text-white ">Get Ticket</a>
             </div>
-          </div>
+          </nav>
           <!-- navbar-ends -->
+
+          <div class="banner my-8 relative">
+            <div class="carousel w-full h-[80vh] sm:rounded-xl">
+                <!-- slider-1 -->
+                <div id="slide1" class="carousel-item relative w-full">
+                  <img src="Images/slider/slider-1.png" class="w-full object-cover" />
+
+                  <div class="items-end sm:ml-6 sm:h-5/6 h-full sm:mt-0 -mt-5 gap-2 absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform">
+                    <a href="#slide3" class="btn btn-circle bg-transparent border-black hover:bg-black hover:text-white">❮</a>
+                    <a href="#slide2" class="btn btn-circle bg-transparent border-black hover:bg-black hover:text-white">❯</a>
+                  </div>
+                </div>
+                <!-- slider-2 -->
+                <div id="slide2" class="carousel-item relative w-full">
+                    <img src="Images/slider/slider-2.png" class="w-full object-cover" />
+  
+                    <div class="items-end sm:ml-6 sm:h-5/6 h-full sm:mt-0 -mt-5 gap-2 absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform">
+                      <a href="#slide1" class="btn btn-circle bg-transparent border-black hover:bg-black hover:text-white">❮</a>
+                      <a href="#slide3" class="btn btn-circle bg-transparent border-black hover:bg-black hover:text-white">❯</a>
+                    </div>
+                  </div>
+
+                <!-- slider-3 -->
+                <div id="slide3" class="carousel-item relative w-full">
+                    <img src="Images/slider/slider-3.png" class="w-full object-cover" />
+  
+                    <div class="items-end sm:ml-6 sm:h-5/6 h-full sm:mt-0 -mt-5 gap-2 absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform">
+                      <a href="#slide2" class="btn btn-circle bg-transparent border-black hover:bg-black hover:text-white">❮</a>
+                      <a href="#slide1" class="btn btn-circle bg-transparent border-black hover:bg-black hover:text-white">❯</a>
+                    </div>
+                  </div>
+              </div> 
+
+              <!-- overlay -->
+              <div class="stack lg:absolute mt-8 bottom-10 right-8">
+                <div class="card sm:rounded-xl rounded-none bg-black text-primary-content shadow-md">
+                  <div class="card-body">
+                    <h2 class="card-title text-white font-extrabold">Meet all heroes from field</h2>
+                    <p>Dit amet consectetur. Conditum dignissim <br class="sm:block hidden"> adipiscing aliquam turpis placerat dolor.</p>
+                  </div>
+                </div>
+              </div>
+          </div>
     </header>
+    <!-- header-area-ends -->
 </body>
 </html>
