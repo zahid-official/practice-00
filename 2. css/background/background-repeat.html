@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Repeat</title>
+
+    <style>
+        div{
+            height: 100vh;
+            margin: 40px 10px;
+            padding: 20px;
+            color: rgb(250, 239, 238);
+            background-color: blueviolet;
+        }
+
+        .background-repeat{
+            background-image: url('images/1.webp');
+        }
+
+        .repeat-horizontally{
+            background-image: url('images/1.webp');
+            background-repeat: repeat-x;
+        }
+
+        .repeat-vertically{
+            background-image: url('images/1.webp');
+            background-repeat: repeat-y;
+        }
+
+        .no-repeat{
+            background-image: url('images/1.webp');
+            background-repeat: no-repeat;
+        }
+
+        .repeat-space{
+            background-image: url('images/1.webp');
+            background-repeat: space;
+        }
+
+        .repeat-round{
+            background-image: url('images/1.webp');
+            background-repeat: round;
+        }
+    </style>
+</head>
+<body>
+    <div class="background-repeat">
+        <h3>Background Image Repeat</h3>
+        <p>By default, the background-image property repeats an image both horizontally and vertically.</p>
+    </div>
+
+    <div class="repeat-horizontally">
+        <h3>Background Image Repeat Horizontally</h3>
+        <p>If the image repeated only horizontally set background-repeat: repeat-x;.</p>
+    </div>
+
+    <div class="repeat-vertically">
+        <h3>Background Image Repeat Vertically</h3>
+        <p>To repeat an image vertically, set background-repeat: repeat-y;</p>
+    </div>
+
+    <div class="no-repeat">
+        <h3>Background Image No Repeat </h3>
+        <p>Showing the background image only once is also specified by the background-repeat: no-repeat</p>
+    </div>
+
+    <div class="repeat-space">
+        <h3>Background Image Repeat Space</h3>
+        <p>The background-image is repeated as much as possible without clipping. The first and last image is pinned to either side of the element, and whitespace is distributed evenly between the images</p>
+    </div>
+
+    <div class="repeat-round">
+        <h3>Background Image Repeat Round</h3>
+        <p>The background-image is repeated and squished or stretched to fill the space (no gaps)</p>
+    </div>
+</body>
+</html>
