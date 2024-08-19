@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Border</title>
+
+    <style>
+        div{
+            height: 300px;
+            width: 300px;
+            margin: 40px 20px;
+            padding: 20px;
+            background-color: #f7ede2;
+        }
+        .border-shorthand{
+            border: 3px solid rgb(123, 8, 255);
+            border-radius: 5px 10px 20px 40px;
+        }
+        .mixed-border{
+            border-style: dotted dashed solid double;
+            border-width: 7px 6px 5px 3px;
+            border-color: darkcyan #663399 rgba(141, 0, 0, 0.966) /*transparent*/; 
+        }
+    </style>
+</head>
+<body>
+    <div class="border-shorthand">
+        <h2>Border</h2>
+        <p>The CSS border properties allow you to specify the style, width, and color of an element's border. The border-style property specifies what kind of border to display. 
+        </p>
+        <p> The border property is a shorthand property for the following individual border properties: 1.border-width <br> 2.border-style (required) <br> 3.border-color</p>
+        <p>The border-radius property is used to add rounded borders to an element</p>
+    </div>
+    
+    <div class="mixed-border">
+        <p>The border-style property can have from one to four values (for the top border, right border, bottom border, and the left border). </p>
+        <p>The border-width property specifies the width of the four borders. It can be set as a specific size (in px, pt, cm, em, etc) or by using one of the three pre-defined values: thin, medium, or thick</p>
+        <p>The border-color property is used to set the color of the four borders.If border-color is not set, it inherits the color of the element</p>
+    </div>
+</body>
+</html>
