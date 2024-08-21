@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Model</title>
+
+    <style>
+        .box-model{
+            height: 500px;
+            width: 500px;
+            margin: 50px;
+            padding: 50px;
+            border: 3px solid black;
+            background-color: rgb(242, 243, 183);
+        }
+    </style>
+</head>
+<body>
+    <div class="box-model">
+        <h2>Box Model</h2>
+        <p>The CSS box model consists of: content, padding, borders and margins. The box model allows us to add a border around elements, and to define space between elements. </p>
+        <p><b>Important:</b> When you set the width and height properties of an element with CSS, you just set the width and height of the content area. To calculate the total width and height of an element, you must also include the padding and borders.</p>
+
+        <p><b>Important:</b> The margin property also affects the total space that the box will take up on the page, but the margin is not included in the actual size of the box. The box's total width and height stops at the border.</p>
+
+        <p>Content - The content of the box, where text and images appear</p>
+        <p>Padding - Clears an area around the content. The padding is transparent</p>
+        <p>Border - A border that goes around the padding and content</p>
+        <p>Margin - Clears an area outside the border. The margin is transparent</p>
+    </div>
+</body>
+</html>
