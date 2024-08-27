@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Height Width</title>
+
+    <style>
+        .height-width{
+            height: 400px;
+            width: 400px;
+            margin-bottom: 50px;
+            background-color: #f7ede2;
+            border: 3px solid rgb(123, 8, 255);
+        }
+
+        .max-height-width{
+            height: 500px;
+            max-height: 400px;
+            width: 80%;
+            max-width: 50%;
+            background-color: aliceblue;
+            border: 1px solid saddlebrown;
+            margin-bottom: 50px;
+        }
+
+        .min-height-width{
+            max-width: 100px;
+            min-height: 400px;
+            width: 500px;
+            min-width: 600px;
+            background-color: aliceblue;
+            border: 1px solid saddlebrown;
+        }
+    </style>
+</head>
+<body>
+    <div class="height-width">
+        <h2>Height Width</h2>
+        <p>The height and width properties are used to set the height and width of an element.The height and width properties do not include padding, borders, or margins. It sets the height/width of the area inside the padding, border, and margin of the element.</p>
+
+        <p>If height is set to a numeric value (like pixels, (r)em, percentages) then if the content does not fit within the specified height, it will overflow. How the container will handle the overflowing content is defined by the overflow property.</p>
+        <p><b>Note:</b> The min-height and max-height properties override the height property. And The min-width and max-width properties override the width property</p>
+    </div>
+
+    <div class="max-height-width">
+        <h2>Max Height Width</h2>
+        <p>The max-width property is used to set the maximum width of an element. The max-height property defines the maximum height of an element.</p>
+
+        <p><b>Note:</b> If you for some reason use both the width property and the max-width property on the same element, and the value of the width property is larger than the max-width property; the max-width property will be used (and the width property will be ignored). Some with height and max-height. But If the content is smaller than the maximum height width then the max-height max-width property has no effect.</p>
+    </div>
+
+    <div class="min-height-width">
+        <h2>Min Height Width</h2>
+        <p>The min-height property defines the minimum height of an element. If the content is smaller than the minimum height, the minimum height will be applied. If the content is larger than the minimum height width, then the minimum height width property has no effect.</p>
+    </div>
+</body>
+</html>
