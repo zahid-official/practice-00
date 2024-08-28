@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .flex-parent{
+            margin: 30px;
+            padding: 30px;
+            font-size: 45px;
+            height: 500px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            /* align-items: center; */
+            align-content: center;
+            border: 1px solid rgb(105, 63, 255)
+        }
+        .child{
+            padding: 30px;
+        }
+        .child1{
+            order: 1;
+            background-color: rebeccapurple;
+        }
+        .child2{ 
+            background-color: cadetblue;
+        }
+        .child3{
+            background-color: burlywood;
+        }
+        .child4{
+            background-color: maroon;
+        }
+        .child5{
+            order: -1;
+            background-color: peru;
+        }
+    </style>
+</head>
+<body>
+    <div class="flex-parent">
+        <div class="child child1">1 </div>
+        <div class="child child2">2</div>
+        <div class="child child3">3 </div>
+        <div class="child child4">4</div>
+        <div class="child child5">5</div>
+        <div class="child child1">1 </div>
+        <div class="child child2">2</div>
+        <div class="child child3">3 </div>
+        <div class="child child4">4</div>
+        <div class="child child5">5</div>
+    </div>
+</body>
+</html>

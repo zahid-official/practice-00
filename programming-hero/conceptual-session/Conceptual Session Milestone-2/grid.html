@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .grid-parent{
+            height: 500px;
+            gap: 30px;
+            padding: 30px;
+            display: grid;
+            grid-template-columns: repeat(3, 50px);
+            grid-template-rows: repeat(2, 100px);
+            border: 1px solid rebeccapurple;
+            align-content: center;
+            justify-content: center;
+            
+        }
+        .item{
+            color:white;
+            font-size: 50px;
+            background-color: rgb(52, 5, 97);
+        }
+        .item1{
+            align-self: center;
+            justify-self: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-parent">
+        <div class="item item1">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+    </div>
+</body>
+</html>

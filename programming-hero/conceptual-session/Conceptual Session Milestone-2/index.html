@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conceptual Session 1</title>
+
+    <style>
+        .width{
+            background-color: rebeccapurple;
+            height: 200px;
+        }
+        .explain-width-100{
+            margin-left: 150px;
+            width: 100%;
+        }
+        .explain-width-auto{
+            margin-left: 150px;
+            width: auto;
+        }
+
+        .image{
+            width: 30%;
+            background-color: rgb(0, 78, 102);
+        }
+        .image-width img{
+            width: 100%;
+        }
+        .image-max-width img{
+            max-width: 100%;
+        }
+
+        .content{
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid rebeccapurple;
+        }
+        .max-content{
+            width: max-content;
+        }
+        .min-content{
+            width: min-content;
+        }
+        .fit-content{
+            width: fit-content;
+        }
+
+        .view-parent{
+            margin: 30px;
+            padding: 60px;
+            width: 30%;
+            height: 150px;
+            background-color: chocolate;
+        }
+        .view-child{
+            width: 50vw;
+            height: 30vh;
+            background-color: rgb(42, 130, 165);
+        }
+
+        .screen{
+            margin: 150px;
+            height: 200px;
+            background-color: bisque;
+        }
+
+        .filter-content{
+            filter: c;
+            filter: brightness(30%);
+        }
+
+        .object-fit img{
+            width: 600px;
+            height: 800px;
+            object-fit: cover;
+        }
+
+        @media screen and (min-width:400px) and (max-width: 600px) {
+            .screen{
+                background-color: blueviolet;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="width explain-width-100">
+        <h2>Width: 100%</h2>
+    </div>
+    <div class="width explain-width-auto">
+        <h2>Width: Auto</h2>
+    </div>
+
+    <div class="image image-width">
+        <h3>Image Width</h3>
+        <img src="images/9.trainer3.png" alt="">
+    </div>
+    <div class="image image-max-width">
+        <h3>Image Max width</h3>
+        <img src="images/9.trainer3.png" alt="">
+    </div>
+
+    <h2>Content</h2>
+    <div class="content max-content">
+        <h2>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas a doloribus praesentium maxime, nostrum quia, recusandae, sint fugiat nihil eius consequuntur accusantium  fugiat nihil eius consequuntur accusantium </h2>
+    </div>
+    <div class="content min-content">
+        <h2>Tempora fugiat nihil eius consequ accusantiumdg</h2>
+    </div>
+    <div class="content fit-content">
+        <h2>Nemo soluta quo fugiat aliquam inventore tenetur dolore, vel sit quis cumque non? Numquam ipsum rerum tempore atque architecto deserunt iure repellendus deleniti, obcaecati, laudantium culpa fugit quibusdam. Omnis atque ab cupiditate nulla totam necessitatibus ipsam, nam est reprehenderit consequuntur, vel consequatur commodi assumenda facilis fugiat quia earum libero dolorum.</h2>
+    </div>
+
+    <div class="view-parent">
+        <div class="view-child">
+            <h2>Viewport</h2>
+        </div>
+    </div>
+
+    <div class="screen">
+        <h2>Screen</h2>
+    </div>
+
+    <div class="filter-content">
+        <img src="images/9.trainer3.png" alt="">
+    </div>
+
+    <div class="object-fit">
+        <img src="images/mountain-scenery-digital-art-4k-wallpaper-uhdpaper.com-180@1@n.jpg" alt="">
+    </div>
+</body>
+</html>
