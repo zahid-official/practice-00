@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outline</title>
+
+    <style>
+        div{
+            height: 400px;
+            width: 400px;
+            margin: 20px;
+            padding: 20px;
+            background-color: antiquewhite;
+        }
+
+        .outline{
+            border: 5px solid black;
+            outline: 5px solid rgb(204, 2, 223);
+        }
+        .mixed-outline{
+            border-style: dashed dotted double solid;
+            border-width: 15px 12px 10px 8px;
+            border-color: rebeccapurple cadetblue gold aqua;
+            border-radius: 10px 20px 30px 40px;
+
+            outline-style: dashed;
+            outline-width: 10px;
+            outline-color: brown;
+            outline-offset: -30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="outline">
+        <h2>Outline</h2>
+        <p>An outline is a line that is drawn around elements, OUTSIDE the borders, to make the element "stand out". It has four properties: 1.outline-style 2.outline-color 3.outline-width 4.outline-offset</p>
+        <p><b>Note:</b> Outline differs from borders! Unlike border, the outline is drawn outside the element's border, and may overlap other content. Also, the outline is NOT a part of the element's dimensions; the element's total width and height is not affected by the width of the outline.</p>
+        
+        <p>The outline-offset property adds space between an outline and the edge/border of an element. The space between an element and its outline is transparent.</p>
+    </div>
+
+    <div class="mixed-outline">
+        <h2>Mixed Outline Not supported</h2>
+        <p><b>Note:</b>  None of the other outline properties will have ANY effect unless the outline-style property is set!</p>
+    </div>
+
+
+</body>
+</html>
