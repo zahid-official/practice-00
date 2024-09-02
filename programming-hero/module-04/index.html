@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module</title>
+
+    <style>
+        table{
+            border-collapse: collapse;
+        }
+        td,th{
+            border: 1px solid black;
+            padding: 5px 10px;
+        }
+    </style>  
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        
+        .menu > ul{
+            display: flex;
+            padding-top: 10px;
+            justify-content: center;
+            background-color: rgb(103, 136, 122);
+        }
+        .menu ul li{
+            list-style: none;
+            position: relative;
+        }
+        .menu ul li a{
+            color: white;
+            font-size: 20px;
+            text-decoration: none;
+            padding: 10px 30px;
+            display: block;
+        }
+        .menu ul li a:hover{
+            background-color: rgb(3, 68, 68);
+        }
+        .submenu{
+            background-color: rgb(103, 136, 122);
+            z-index: 99;
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+        }
+        .menu ul li:hover > .submenu{
+            display: block;
+        }
+        .submenu1{
+            top: 0;
+            left: 100%;
+        }
+    </style>
+</head>
+<body>
+    <nav class="menu">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Bank</a>
+                <ul class="submenu">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Car</a></li>
+                    <li><a href="#">Bike</a></li>
+                    <li><a href="#">Scooter</a>
+                        <ul class="submenu submenu1">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Car</a></li>
+                            <li><a href="#">Bike</a></li>
+                            <li><a href="#">Scooter</a>
+                                <ul class="submenu submenu1">
+                                    <li><a href="#">Home</a></li>
+                                    <li><a href="#">Car</a></li>
+                                    <li><a href="#">Bike</a></li>
+                                    <li><a href="#">Scooter</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="#">Scooter</a></li>
+            <li><a href="#">Bike</a></li>
+        </ul>
+    </nav>
+
+
+    <audio controls src="assets/Maher Zain - Rahmatun Lil’Alameen.mp3"></audio>
+    <br><br>
+    <video controls width="100%" src="assets/Foggy, Cami, Turkey. Free Stock Video.mp4"></video>
+    <br><br><br><br>
+
+    <form action="">
+        <fieldset>
+            <legend>Radio Input</legend>
+            <label for="arabic">
+                <input type="radio" name="books" id="arabic"> Arabic
+            </label>
+            <label for="english">
+                <input type="radio" name="books" id="english"> English
+            </label>
+            <label for="bangla">
+                <input type="radio" name="books" id="bangla"> Bangla
+            </label>
+        </fieldset>
+
+        <fieldset>
+            <legend>Checkbox Input</legend>
+            <label for="islamic">
+                <input type="checkbox" name="boi" id="islamic"> Islamic
+            </label>
+            <label for="general">
+                <input type="checkbox" name="boi" id="general"> General
+            </label>
+            <label for="fiction">
+                <input type="checkbox" name="boi" id="fiction"> Fiction
+            </label>
+        </fieldset>
+
+        <fieldset>
+            <legend>Textarea</legend>
+            <textarea name="" id="" cols="50" rows="10"></textarea>
+        </fieldset>
+        <input type="reset" value="Reset">
+        <input type="submit" value="Sign Up">
+    </form>
+    <br><br>
+
+    <table>
+    <caption>Friends Data</caption>
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th>Name</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Noman</td>
+                <td>noman@email.com</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Rifat</td>
+                <td>rifat@email.com</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Walid</td>
+                <td>walid@email.com</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Zahid</td>
+                <td>zahid@email.com</td>
+            </tr>
+        </tbody>
+    </table>
+
+    
+</body>
+</html>
