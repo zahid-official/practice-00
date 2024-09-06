@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+/* common styles */
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Lato", sans-serif;
+}
+img{
+    height: auto;
+    max-width: 100%;
+    display: block;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+.btn-primary{
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 20px 45px;
+    border-radius: 10px;
+    color: rgb(255, 255, 255);
+    background: rgb(229, 84, 115);
+}
+.btn-primary:hover{
+    background-color: rgb(207, 62, 93);
+}
+.span{
+    color: rgb(229, 84, 115);
+}
+
+/* header-area */
+.header-area{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 200px 0;
+    background-color: rgba(229, 84, 115, 0.1);
+}
+.header-content{
+    width: 45%;
+}
+.header-photo{
+    width: 45%;
+    margin-top: 50px;
+}
+.header-content h2{
+    font-size: 80px;
+    font-weight: 800;
+    color: rgb(39, 39, 39);
+}
+.header-content p{
+    font-size: 18px;
+    margin: 20px 0 30px;
+    color: rgba(39, 39, 39, 0.6);
+}
+
+/* main-area */
+.feature-section{
+    width: 80%;
+    margin: 0 auto;
+}
+.section-title{
+    text-align: center;
+    padding: 130px 0 50px;
+}
+.section-title h2{
+    font-size: 40px;
+    font-weight: 800;
+    color: rgb(39, 39, 39);
+}
+.section-title p{
+    margin: 20px 0;
+    font-size: 18px;
+    color: rgba(39, 39, 39, 0.6);
+}
+
+/* feature-products */
+.feature-products{
+    gap: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.feature-content{
+    width: 30%;
+    text-align: center;
+}
+.feature-content a{
+    font-size: 24px;
+    font-weight: 700;
+    margin-top: 35px;
+    display: inline-block;
+    color: rgb(39, 39, 39);
+    text-decoration-line: underline;
+}
+.feature-content a:hover{
+    color: rgb(166, 6, 26);
+}
+.feature-item-container{
+    height: 540px;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    border-radius: 300px 300px 0px 0px;
+    background: rgba(167, 33, 98, 0.15);
+}
+.feature-item-container2{
+    align-items: center;
+    background-color: rgba(5, 151, 160, 0.15);
+}
+.feature-item-container3{
+    background-color: rgba(71, 125, 17, 0.15);
+}
+
+/* delivery-section */
+.delivery-section{
+    padding: 100px;
+    border-radius: 12px;
+    margin: 120px 30px 150px;
+    background: rgba(39, 39, 39, 0.05);
+}
+.delivery-content{
+    gap: 50px;
+    display: flex;
+    justify-content: center;
+}
+.delivery-container{
+    width: 30%;
+    text-align: center;
+}
+.delivery-container p{
+    margin: 20px 0;
+    font-size: 22px;
+    font-weight: 600;
+    color: rgba(39, 39, 39, 0.8);
+}
+.delivery-item{
+    display: flex;
+    justify-content: center;
+}
+
+/* sale-area */
+.sale-area{
+    gap: 80px;
+    padding: 80px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(253, 246, 248);
+}
+.sale-content{
+    width: 35%;
+    margin-left: 180px;
+}
+.sale-content h3{
+    font-size: 40px;
+    font-weight: 800;
+}
+.sale-content p{
+    margin: 20px;
+    font-size: 18px;
+    color: rgba(39, 39, 39, 0.6);
+}
+.shop-area{
+    width: 75%;
+    margin: 0 auto;
+}
+.shop-content{
+    gap: 50px;
+    display: flex;
+    margin-bottom: 80px;
+    justify-content: center;
+}
+.deal-area{
+    margin: 150px 0;
+    text-align: center;
+    border-radius: 20px;
+    padding: 50px 0 120px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('images/10.background.png');
+}
+.deal-area .section-title{
+    padding: 50px 0 50px;
+}
+
+.deal-area form input[type="email"]{
+    width: 40%;
+    border: none;
+    padding: 20px;
+    font-size: 20px;
+    margin-right: 10px;
+    border-radius: 12px;
+}
+
+/* footer-area */
+.footer-area{
+    padding-bottom: 50px;
+    background-color: rgb(17, 16, 16);
+}
+.footer-area .section-title h2,
+.footer-area .section-title p{
+    color: rgb(230, 230, 230);
+}
+.footer-area h5{
+    margin-top: 30px;
+    color: rgb(112, 111, 111);
+}
