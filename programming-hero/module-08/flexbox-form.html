@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Form</title>
+
+    <style>
+        .form-area{
+            height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .form-area form{
+            display: flex;
+            flex-direction: column;
+            width: 30%;
+            text-align: center;
+        }
+        form input{
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <section class="form-area">
+        <form action="">
+            <h2>Flexbox From</h2>
+            <input type="email" placeholder="Email">
+            <input type="password" placeholder="Password">
+            <input type="submit" value="Login">
+        </form>
+    </section>
+</body>
+</html>

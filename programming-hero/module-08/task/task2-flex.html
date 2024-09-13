@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 2 Flex</title>
+
+    <style>
+        .container{
+            display: flex;
+            gap: 10px;
+
+        }
+        .item{
+            width: 100%;
+            height: 50vh;
+        }
+        #box1{
+            background-color: rebeccapurple;
+        }
+        .child{
+            width: 100%;
+            height: 25vh;
+        }
+        #child{
+            background-color: bisque;
+            margin-bottom: 10px;
+        }
+        .child-contaniner{
+            display: flex;
+            gap: 10px;
+        }
+        .baby{
+            background-color: rosybrown;
+            width: 100%;
+            height: 25vh;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item" id="box1">1</div>
+        <div class="item" id="box2">
+            <div class="child" id="child">2</div>
+            <div class="child child-contaniner">
+                <div class="baby">3</div>
+                <div class="baby">4</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
