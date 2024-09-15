@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout</title>
+
+    <style>
+        header,nav,main,aside,footer{
+            background-color: bisque;
+            border: 2px solid black;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        .header-area{
+            grid-area: top;
+        }
+        .nav-area{
+            grid-area: left;
+        }
+        .main-area{
+            grid-area: middle;
+        }
+        .sidebar{
+            grid-area: right-up;
+        }
+        .ads{
+            grid-area: right-down;
+        }
+        .footer-area{
+            grid-area: bottom;
+        }
+
+        .container{
+            display: grid;
+            gap: 20px;
+            grid-template-areas: 
+            "top        top         top         top"
+            "left       middle      middle      right-up"
+            "left       middle      middle      right-down"
+            "bottom     bottom      bottom      bottom";
+        }
+
+        @media screen and (max-width:768px){
+            .container{
+                grid-template-areas:
+                "top            top          top"
+                "left           left         left"
+                "right-up       middle       middle"
+                "right-down     bottom       bottom"
+                ;
+            }
+        }
+        @media screen and (max-width:576px) {
+            .container{
+                grid-template-areas: 
+                "top"
+                "right-down"
+                "left"
+                "middle"
+                "right-up"
+                "bottom"
+                ;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header-area">
+            <h1>header</h1>
+        </header>
+    
+        <nav class="nav-area">
+            <ul>
+                <li><a href="#">item1</a></li>
+                <li><a href="#">item2</a></li>
+                <li><a href="#">item3</a></li>
+            </ul>
+        </nav>
+    
+        <main class="main-area">
+            <article>
+                <h2>main 1</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi quasi eaque id quas! Eius illo reprehenderit voluptatum explicabo assumenda amet fuga nam iure molestiae? Quisquam quaerat commodi architecto ipsa aut ipsam odio ex rerum, exercitationem sequi repellat dolor aliquid porro. Corrupti at totam tempora dicta asperiores tenetur obcaecati veritatis quasi?</p>
+            </article>
+            <article>
+                <h2>main 2</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi quasi eaque id quas! Eius illo reprehenderit voluptatum explicabo assumenda amet fuga nam iure molestiae? Quisquam quaerat commodi architecto ipsa aut ipsam odio ex rerum, exercitationem sequi repellat dolor aliquid porro. Corrupti at totam tempora dicta asperiores tenetur obcaecati veritatis quasi?</p>
+            </article>
+        </main>
+    
+        <aside>
+            <div class="sidebar">
+                <h4>Sidebar</h4>
+            </div>
+        </aside>
+        <aside>
+            <div class="ads">
+                <h4>ads</h4>
+            </div>
+        </aside>
+    
+        <footer class="footer-area">
+            <h2>Footer</h2>
+        </footer>
+    </div>
+</body>
+</html>
