@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter vs backdrop-filter</title>
+    
+    <style>
+        .backdrop,.filter{
+            height: 500px;
+            font-size: 2rem;
+            color: rgb(12, 145, 123);
+            background-repeat: no-repeat;
+            background-image: url('https://shorturl.at/eTP0c');
+            background-size: cover;
+        }
+        .content{
+            height: 100%;
+            backdrop-filter: blur(4px);
+        }
+        .filter{
+            filter: blur(4px);
+        }
+    </style>
+</head>
+<body>
+    <div class="backdrop">
+        <div class="content">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit quo totam minus soluta ipsam eligendi officiis quam id repudiandae voluptatum! Eveniet inventore, asperiores aliquid voluptas voluptate suscipit dolorum voluptatem dignissimos.
+        </div>
+    </div>
+    <div class="filter">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis enim consequuntur accusantium tempora blanditiis! Illum numquam recusandae consequatur voluptatem nostrum, hic possimus fuga mollitia, placeat inventore dolorem dolore fugiat aspernatur.</p>
+    </div>
+</body>
+</html>

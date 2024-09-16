@@ -1,0 +1,51 @@
+@media screen and (max-width:992px){
+    .header-top,
+    .navbar > ul{
+        text-align: center;
+        flex-direction: column;
+    }
+    .navbar ul li a{
+        display: block;
+        margin: 10px 0;
+    }
+    .header-middle{
+        width: 90%;
+        margin: 20px auto 50px;
+    }
+
+    .experience-area{
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .facts-container{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .sponsor-container{
+        gap: 50px;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .popup{
+        display: block;
+        padding: 30px;
+        margin: 40px auto;
+    }
+}
+@media screen and (max-width:768px) {
+    .feature-area,
+    .facts-container{
+        text-align: center;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .sponsor-area{
+        padding-top: 50px;
+    }
+    
+}
+@media screen and (max-width:576px){
+    .header-bottom{
+        margin-bottom: 20px;
+    }
+    .sponsor-container{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
