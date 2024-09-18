@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variable</title>
+
+    <style>
+        :root{
+            --custom-color: slateblue;
+            --custom-font: calc(4rem - 10px);
+        }
+        .container{
+            background-color: wheat;
+        }
+        .box{
+            padding: 20px;
+            border: 5px solid var(--custom-color);
+        }
+        h2{
+            color: var(--custom-color);
+            font-size: var(--custom-font);
+        }
+        p{
+            background-color: var(--custom-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <h2>hello css variable</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa cumque in at odio minus quasi molestias quaerat, consequuntur et dignissimos saepe aut voluptatum sequi aliquid aperiam iure hic voluptatibus maiores?</p>
+        </div>
+    </div>
+</body>
+</html>

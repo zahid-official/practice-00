@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* common styles */
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+img{
+    max-width: 100%;
+    height: auto;
+    display: inline-block;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+.btn{
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 40px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(224, 44, 109);
+}
+.btn:hover{
+    cursor: pointer;
+    background-color: rgb(202, 25, 90);
+}
+
+/* header-area */
+.header-area{
+    padding: 3% 8%;
+    color: rgb(58, 58, 58);
+}
+.header-top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar ul,
+.bars-icon{
+    display: flex;
+    align-items: center;
+}
+.navbar ul a{
+    margin: 1.5rem;
+    font-weight: 600;
+    color: rgb(58, 58, 58);
+}
+.navbar ul a:hover,
+.bars-icon i:hover{
+    color: rgb(224, 44, 109);
+}
+.bars-icon{
+    display: none;
+    font-size: 1.25rem;
+}
+
+/* header-bottom */
+.header-bottom{
+    padding: 50px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header-description h2{
+    font-size: 3.25rem;
+}
+.header-description p{
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 10px 0 30px 0;
+}
+.header-banner img{
+    padding: 50px;
+    margin-top: 50px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('images/Circle\ design.svg');
+}
+.sponsorship{
+    padding: 20px;
+    gap: 20px;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: repeat(6,1fr);
+}
+.sponsorship img:hover{
+    cursor: pointer;
+    filter: grayscale(100%);
+}
+
+/* main-area */
+.main-area{
+    padding: 3% 8%;
+}
+.section-title{
+    font-weight: 600;
+    font-size: 1.75rem;
+    text-align: center;
+    color: rgb(58, 58, 58);
+    padding-bottom: 60px;
+}
+.section-content{
+    gap: 30px;
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(3, 1fr);
+}
+.section-cards{
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.15);
+}
+.section-cards h3{
+    font-weight: 500;
+    font-size: 1.5rem;
+    color: rgb(24, 25, 31);
+}
+.section-cards h4{
+    font-size: 1.25rem;
+    color: rgba(0, 0, 0, 0.87);
+    margin: 8px 0;
+}
+.section-cards span{
+    font-size: 0.87rem;
+    font-weight: 700;
+    color: rgb(94, 99, 102);
+    margin-bottom: 8px;
+    display: inline-block;
+}
+.section-cards p{
+    font-size: 0.87rem;
+    font-weight: 700;
+    color: rgb(120, 120, 133);
+}
+#more-info{
+    text-align: right;
+    margin-right: 5.5%;
+    margin-top: 30px;
+    font-weight: 700;
+    color: rgba(224, 44, 109, 0.87);
+}
+
+/* product-section */
+.product-section{
+    padding: 6%;
+    display: grid;
+    gap: 50px;
+    align-items: center;
+    grid-template-columns: repeat(3, 1fr);
+}
+.product-details{
+    grid-column: span 2;
+}
+.product-details h2{
+    font-size: 2.3rem;
+    font-weight:  700;
+}
+.product-details p{
+    font-size: 1rem;
+    font-weight: 700;
+    margin:10px 0 30px;
+}
+.product-details .btn{
+    border-radius: 0;
+}
+
+/* footer-area */
+.footer-area{
+    padding: 50px;
+    color: white;
+    text-align: center;
+    background-color: rgb(10, 8, 38);
+}
+.footer-area h3{
+    font-size: 1.8rem;
+}
+.footer-area p{
+    margin: 10px 0 20px;
+}
+.footer-area ul{
+    display: flex;
+    justify-content: center;
+}
+.footer-area ul li{
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: rgb(35, 33, 60);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer-area ul a{
+    color: white;
+    font-size: 1.5rem;
+}
+.footer-area ul li:hover a{
+    color: rgb(202, 25, 90);
+}
