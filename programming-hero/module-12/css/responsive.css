@@ -1,0 +1,125 @@
+/* for large-screen */
+@media screen and (max-width:992px) {
+
+    /* common styles */
+    br{
+        display: none;
+    }
+    
+    /* header-area */
+    .navbar ul{
+        display: none;
+    }
+    .bars-icon{
+        display: block;
+    }
+    .header-bottom{
+        gap: 50px 0;
+        flex-direction: column;
+    }
+
+    /* main-area */
+    .habit-container{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .hardwork-display img{
+        max-width: 100%;
+    }
+    .exercise-container{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    #training1,
+    #training2,
+    #training3,
+    #training4,
+    #training5,
+    #training6{
+        grid-column: auto;
+    }
+    
+    .bmi-calulator{
+        align-items: center;
+        flex-direction: column;
+    }
+    .calculator-section .section-title,
+    .calculator-chart,
+    .self-calculation{
+        width: 100%;
+    }
+    .self-calculation input,
+    .select-container{
+        width: 47.5%;
+    }
+    .activity{
+        width: 97%;
+    }
+    .our-team{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .our-packages{
+        flex-direction: column;
+    }
+    
+
+    /* footer-area */
+    .footer-top{
+        grid-template-columns: 2fr 1fr 1fr;
+    }
+    .our-service1{
+        grid-column: 2/3;
+    }
+}
+
+/* for medium-screen */
+@media screen and (max-width:768px) {
+    
+    /* main-area */
+    .work-hard{
+        flex-direction: column;
+    }
+
+    /* footer-area */
+    .footer-top{
+        grid-template-columns: 1fr;
+    }
+    .our-service1{
+        grid-column: auto;
+    }
+}
+
+/* for small-screen */
+@media screen and (max-width:576px) {
+
+    /* header-area */
+    .header-area .btn{
+        padding: 1rem;
+        font-size: 0.8rem;
+        margin-right: 0.4rem;
+    }
+    .popup{
+        padding: .8rem;
+    }
+    /* main-area */
+    .habit-container{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .work-hard{
+        padding: 1rem;
+    }
+    .self-calculation input,
+    .select-container{
+        width: 45%;
+    }
+    .activity{
+        width: 93%;
+    }
+    .exercise-container{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .our-team{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .membership-card{
+        padding: 2.5rem 2rem;
+    }
+}
