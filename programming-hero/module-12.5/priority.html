@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>priority</title>
+
+    <style>
+        *{  
+            font-size: 1.3rem;
+            font-weight: bolder;
+            color: rebeccapurple;
+        }
+        p{
+            color: brown;
+        }
+        #id{
+            color: blue;
+        }
+        .class{
+            color: rgb(6, 167, 105);
+        }
+        .class{
+            color: rgb(145, 155, 5);
+        }
+        .class2{
+            color: green;
+        }
+        .class3{
+            color: hotpink !important;
+        }
+    </style>
+</head>
+<body>
+    <p class="class">This is Proirity</p>
+    <p id="id" class="class">This is Proirity</p>
+    <p>This is Proirity</p>
+    <p style="color: black;" class="class2">This is Proirity</p>
+    <p style="color: rgb(12, 183, 189);" class="class3">This is Proirity</p>
+</body>
+</html>
