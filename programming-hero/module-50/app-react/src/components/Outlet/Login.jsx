@@ -1,9 +1,18 @@
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import auth from "../../firebase";
+
 const Login = () => {
 
     const handleSubmit = (event)=>{
         event.preventDefault();
-        console.log(event.target.userEmail.value)
-        console.log(event.target.userPassword.value)
+        const email = event.target.userEmail.value;
+        const password = event.target.userPassword.value;
+        console.log(email, password)
+
+        // auth by email & password
+        createUserWithEmailAndPassword(auth, email, password)
+        .then(result => console.log(result))
+        .catch(error => console.log(error))
     }
 
 
@@ -19,7 +28,7 @@ const Login = () => {
               <span className="label-text">Email</span>
             </label>
             <input
-              type="text"
+              type="email"
               name="userEmail"
               placeholder="email"
               className="input input-bordered"
@@ -31,7 +40,7 @@ const Login = () => {
               <span className="label-text">Password</span>
             </label>
             <input
-              type="text"
+              type="password"
               name="userPassword"
               placeholder="password"
               className="input input-bordered"
