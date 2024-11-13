@@ -4,10 +4,7 @@ const Navbar = () => {
   const links = (
     <>
       <li className="text-lg font-semibold">
-        <NavLink to="/">Home</NavLink>
-      </li>
-      <li className="text-lg font-semibold">
-        <NavLink to="/login">Login</NavLink>
+        <NavLink to="/">Login</NavLink>
       </li>
       <li className="text-lg font-semibold">
         <NavLink to="/register">Register</NavLink>
