@@ -1,12 +1,19 @@
-import { Link, NavLink } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
-
-    const links = <>
-        <li className="text-lg font-semibold"><NavLink to='/'>Home</NavLink></li>
-        <li className="text-lg font-semibold"><NavLink to='/login'>Login</NavLink></li>
-        <li className="text-lg font-semibold"><NavLink to='/register'>Register</NavLink></li>
+  const links = (
+    <>
+      <li className="text-lg font-semibold">
+        <NavLink to="/">Home</NavLink>
+      </li>
+      <li className="text-lg font-semibold">
+        <NavLink to="/login">Login</NavLink>
+      </li>
+      <li className="text-lg font-semibold">
+        <NavLink to="/register">Register</NavLink>
+      </li>
     </>
+  );
 
   return (
     <>
@@ -31,16 +38,20 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+            >
               {links}
             </ul>
           </div>
-          <Link to='/' className="btn btn-ghost hover:bg-transparent sm:text-4xl text-2xl font-bold">Firebase Auth</Link>
+          <Link
+            to="/"
+            className="btn btn-ghost hover:bg-transparent sm:text-4xl text-2xl font-bold"
+          >
+            Firebase Auth
+          </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
-          {links}
-          </ul>
+          <ul className="menu menu-horizontal px-1">{links}</ul>
         </div>
         <div className="navbar-end">
           <Link className="btn sm:text-lg font-semibold">Button</Link>
