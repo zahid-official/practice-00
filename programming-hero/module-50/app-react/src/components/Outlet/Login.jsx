@@ -18,7 +18,7 @@ const Login = () => {
 
   return (
     <>
-      <h2 className="text-3xl font-semibold text-center mb-5">Login Now!</h2>
+      <h2 className="text-3xl font-semibold text-center mb-5">Login to your Account</h2>
       <div className="card bg-base-100 w-full max-w-sm mx-auto pb-4 mb-5 shrink-0 shadow-2xl">
         
         {/* form */}
