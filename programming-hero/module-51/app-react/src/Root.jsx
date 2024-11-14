@@ -1,3 +1,4 @@
+import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 
 const Root = () => {
@@ -5,6 +6,7 @@ const Root = () => {
         <div>
             <header className="bg-base-200">
                 <Navbar></Navbar>
+                <Footer></Footer>
             </header>
         </div>
     );

@@ -5,7 +5,7 @@ const Navbar = () => {
     <>
       <nav className="navbar container mx-auto py-6">
         <div className="flex-1">
-          <Link to='/' className="btn btn-ghost sm:text-4xl text-3xl">Firebase</Link>
+          <Link to='/' className="btn btn-ghost sm:text-4xl text-3xl font-bold">Firebase</Link>
         </div>
         <div className="flex-none">
           <ul className="menu menu-horizontal px-1">
