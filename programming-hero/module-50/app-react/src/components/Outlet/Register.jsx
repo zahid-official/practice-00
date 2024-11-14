@@ -8,7 +8,7 @@ const Register = () => {
   // state for error message
   const [message, setMessage] = useState("");
   // state for success message
-  const [success, setSuccess] = useState(false);
+  const [success, setSuccess] = useState("");
   // state for show password
   const [showPassword, setShowPassword] = useState(false);
 
@@ -17,12 +17,11 @@ const Register = () => {
     const email = event.target.userEmail.value;
     const password = event.target.userPassword.value;
     const checkbox = event.target.checkbox.checked;
-    console.log(email, password, checkbox);
 
     // reset  error message
     setMessage("");
     // reset  success message
-    setSuccess(false);
+    setSuccess("");
     // check strong password
     const strongPasswordRegex =
       /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
@@ -35,18 +34,24 @@ const Register = () => {
         setMessage("Check Terms & Conditions")
         return;
     }
+    
 
     // auth by email & password
     createUserWithEmailAndPassword(auth, email, password)
       .then((result) => {
-        console.log(result);
-        setSuccess(true);
+        //verify email
+        if(!result.user.emailVerified){
+          setMessage('Verify You Email')
+          return
+        }
+        setSuccess('Registration Successful');
       })
       .catch((error) => {
         console.log(error.message);
         setMessage(error.message);
-        setSuccess(false);
+        setSuccess("");
       });
+      
   };
 
   return (
@@ -113,9 +118,7 @@ const Register = () => {
 
         {/* display success message */}
         {success && (
-          <p className="text-center text-green-700 font-semibold">
-            Registration Successful
-          </p>
+          <p className="text-center text-green-700 font-semibold">{success}</p>
         )}
       </div>
     </>
