@@ -1,12 +1,64 @@
+import {
+  createUserWithEmailAndPassword,
+  sendEmailVerification,
+  updateProfile,
+} from "firebase/auth";
 import { Link } from "react-router-dom";
+import { auth } from "../../firebase";
+import { useState } from "react";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Register = () => {
+  // state for success
+  const [success, setSuccess] = useState("");
+  // state for error
+  const [errorMessage, setErrorMessage] = useState("");
+  // state for showPassword
+  const [showPassword, setShowPassword] = useState(false);
+
   // handleSubmit
   const handleSubmit = (event) => {
     event.preventDefault();
+    const name = event.target.userName.value;
     const email = event.target.userEmail.value;
     const password = event.target.userPassword.value;
-    console.log(email, password);
+    const checkbox = event.target.termsCheckbox.checked;
+    console.log(checkbox);
+
+    // reset states
+    setSuccess("");
+    setErrorMessage("");
+
+    // strong password
+    const strongPasswordRegex =
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{4,}$/;
+    if (!strongPasswordRegex.test(password)) {
+      setErrorMessage("Make Password Strong");
+      return;
+    }
+
+    // checkbox
+    if (!checkbox) {
+      setErrorMessage("Check Terms & Conditions");
+      return;
+    }
+
+    // create email based account
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((result) => {
+        console.log(result)
+        // verification email send
+        sendEmailVerification(auth.currentUser)
+          .then(setSuccess("Registration Successful"))
+          .catch((error) => setErrorMessage(error.message));
+
+        // profile update
+        updateProfile(auth.currentUser, { displayName: name })
+          .then(() => console.log("Proflie Updated"))
+          .catch(() => console.log("Profile Update Error"));
+      })
+
+      .catch((error) => setErrorMessage(error.message));
   };
 
   return (
@@ -21,45 +73,78 @@ const Register = () => {
             <form onSubmit={handleSubmit} className="card-body">
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Email</span>
+                  <span className="label-text">User Name</span>
                 </label>
                 <input
-                  type="email"
-                  name="userEmail"
-                  placeholder="email"
+                  type="text"
+                  name="userName"
+                  placeholder="User Name"
                   className="input input-bordered"
-                  required
                 />
               </div>
 
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Password</span>
+                  <span className="label-text">Email</span>
                 </label>
                 <input
-                  type="password"
-                  name="userPassword"
-                  placeholder="password"
+                  type="email"
+                  name="userEmail"
+                  placeholder="Email"
                   className="input input-bordered"
                   required
                 />
+              </div>
+
+              <div className="form-control relative">
                 <label className="label">
-                  <a href="#" className="label-text-alt link link-hover">
-                    Forgot password?
-                  </a>
+                  <span className="label-text">Password</span>
+                </label>
+                <input
+                  type={showPassword ? "text" : "password"}
+                  name="userPassword"
+                  placeholder="Password"
+                  className="input input-bordered"
+                  required
+                />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="absolute top-14 right-3"
+                >
+                  {showPassword ? <FaEyeSlash /> : <FaEye />}
+                </button>
+              </div>
+
+              <div className="form-control">
+                <label className="label cursor-pointer justify-start gap-2 mt-4">
+                  <input
+                    type="checkbox"
+                    name="termsCheckbox"
+                    className="checkbox"
+                  />
+                  <span className="label-text">Terms & Conditions</span>
                 </label>
               </div>
+
               <div className="form-control mt-6">
                 <button className="btn btn-primary">Register</button>
               </div>
             </form>
 
-            <p>
+            <p className="mb-3">
               Already have an account?
               <span className="underline">
-                <Link to='/'> Sign In</Link>
+                <Link to="/"> Sign In</Link>
               </span>
             </p>
+
+            {success && (
+              <p className="font-semibold text-green-700">{success}</p>
+            )}
+            {errorMessage && (
+              <p className="font-semibold text-red-700">{errorMessage}</p>
+            )}
           </div>
         </div>
       </div>

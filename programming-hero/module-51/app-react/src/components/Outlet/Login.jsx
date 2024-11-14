@@ -1,13 +1,57 @@
+import { useRef, useState } from "react";
+import { sendPasswordResetEmail, signInWithEmailAndPassword } from "firebase/auth";
 import { Link } from "react-router-dom";
+import { auth } from "../../firebase";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Login = () => {
+  // state for success
+  const [success, setSuccess] = useState("");
+  // state for error
+  const [errorMessage, setErrorMessage] = useState("");
+  // state for showPassword
+  const [showPassword, setShowPassword] = useState(false);
+  //ref for reset password
+  const emailRef = useRef();
+
   // handleSubmit
   const handleSubmit = (event) => {
     event.preventDefault();
     const email = event.target.userEmail.value;
     const password = event.target.userPassword.value;
-    console.log(email, password);
+
+    // reset states
+    setSuccess("");
+    setErrorMessage("");
+
+    // signIn by email based method
+    signInWithEmailAndPassword(auth, email, password)
+      .then((result) => {
+        if(!result.user.emailVerified){
+          setErrorMessage("Verify Email")
+          return;
+        }
+        setSuccess("LogIn Successful")
+      })
+      .catch((error) => setErrorMessage(error.message));
   };
+
+  // handleReset
+  const handleReset = ()=>{
+    // reset states
+    setErrorMessage("");
+    setSuccess("");
+
+    const email = emailRef.current.value;
+    if(!email){
+      setErrorMessage("Invalid Email")
+      return;
+    }
+
+    sendPasswordResetEmail(auth, email)
+    .then(()=> setSuccess("Reset Email Sent"))
+    .catch(error => setErrorMessage(error.message))
+  }
 
   return (
     <>
@@ -25,6 +69,7 @@ const Login = () => {
                 </label>
                 <input
                   type="email"
+                  ref={emailRef}
                   name="userEmail"
                   placeholder="email"
                   className="input input-bordered"
@@ -32,21 +77,30 @@ const Login = () => {
                 />
               </div>
 
-              <div className="form-control">
+              <div className="form-control relative">
                 <label className="label">
                   <span className="label-text">Password</span>
                 </label>
                 <input
-                  type="password"
+                  type={showPassword ? "text" : "password"}
                   name="userPassword"
                   placeholder="password"
                   className="input input-bordered"
                   required
                 />
+
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="absolute top-14 right-3"
+                >
+                  {showPassword ? <FaEyeSlash /> : <FaEye />}
+                </button>
+
                 <label className="label">
-                  <a href="#" className="label-text-alt link link-hover">
+                  <button onClick={handleReset} type="button" href="#" className="label-text-alt link link-hover">
                     Forgot password?
-                  </a>
+                  </button>
                 </label>
               </div>
               <div className="form-control mt-6">
@@ -54,12 +108,19 @@ const Login = () => {
               </div>
             </form>
 
-            <p>
+            <p className="mb-3">
               Dont have an account?
               <span className="underline">
-                <Link to='/register'> Sign Up</Link>
+                <Link to="/register"> Sign Up</Link>
               </span>
             </p>
+
+            {success && (
+              <p className="font-semibold text-green-700">{success}</p>
+            )}
+            {errorMessage && (
+              <p className="font-semibold text-red-700">{errorMessage}</p>
+            )}
           </div>
         </div>
       </div>
