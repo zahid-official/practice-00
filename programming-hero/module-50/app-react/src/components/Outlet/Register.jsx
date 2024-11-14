@@ -1,4 +1,8 @@
-import { createUserWithEmailAndPassword, sendEmailVerification } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  sendEmailVerification,
+  updateProfile,
+} from "firebase/auth";
 import auth from "../../firebase";
 import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
@@ -31,28 +35,42 @@ const Register = () => {
       return;
     }
     // check checkbox
-    if(!checkbox){
-        setMessage("Check Terms & Conditions")
-        return;
+    if (!checkbox) {
+      setMessage("Check Terms & Conditions");
+      return;
     }
-    
 
     // auth by email & password
     createUserWithEmailAndPassword(auth, email, password)
       .then((result) => {
-        console.log(result)
+        console.log(result);
 
         // sendEmailVerification
         sendEmailVerification(auth.currentUser)
-        .then(()=> setSuccess('Registration Successful, Check Email to Verify'))
+          .then((result) => {
+            console.log(result);
+            setSuccess("Registration Successful, Check Email to Verify");
+          })
+          .catch((error) => console.log(error.message));
 
+        // update profile
+        const name = event.target.userName.value;
+        const photo = event.target.userPhoto.value;
+        const profile = {
+          displayName: name,
+          photoURL: photo,
+        };
+
+        updateProfile(auth.currentUser, profile)
+          .then(() => console.log("Profile Updated"))
+          .catch((error) => console.log("Profile Update Error", error.message));
       })
+
       .catch((error) => {
         console.log(error.message);
         setMessage(error.message);
         setSuccess("");
       });
-      
   };
 
   return (
@@ -61,6 +79,35 @@ const Register = () => {
       <div className="card bg-base-100 w-full max-w-sm mx-auto pb-4 mb-5 shrink-0 shadow-2xl">
         {/* form */}
         <form onSubmit={handleSubmit} className="card-body">
+          {/* display name */}
+          <div className="form-control">
+            <label className="label">
+              <span className="label-text">User Name</span>
+            </label>
+            <input
+              type="text"
+              name="userName"
+              placeholder="User Name"
+              className="input input-bordered"
+              required
+            />
+          </div>
+
+          {/* display photo */}
+          <div className="form-control">
+            <label className="label">
+              <span className="label-text">User Photo</span>
+            </label>
+            <input
+              type="text"
+              name="userPhoto"
+              placeholder="User Photo"
+              className="input input-bordered"
+              required
+            />
+          </div>
+
+          {/* email */}
           <div className="form-control">
             <label className="label">
               <span className="label-text">Email</span>
@@ -73,6 +120,8 @@ const Register = () => {
               required
             />
           </div>
+
+          {/* password */}
           <div className="form-control relative">
             <label className="label">
               <span className="label-text">Password</span>
@@ -93,6 +142,7 @@ const Register = () => {
             </button>
           </div>
 
+          {/* checkbox */}
           <div className="form-control">
             <label className="label justify-start gap-2 cursor-pointer">
               <input type="checkbox" name="checkbox" className="checkbox" />
@@ -100,12 +150,20 @@ const Register = () => {
             </label>
           </div>
 
+          {/* submit */}
           <div className="form-control mt-6">
-            <button type="submit" className="btn btn-primary">Register</button>
+            <button type="submit" className="btn btn-primary">
+              Register
+            </button>
           </div>
         </form>
 
-        <p className="text-center">Already have an account? <span className="underline"><Link to='/'>Sign In</Link></span></p>
+        <p className="text-center">
+          Already have an account?{" "}
+          <span className="underline">
+            <Link to="/">Sign In</Link>
+          </span>
+        </p>
 
         {/* display error message */}
         {message && (
