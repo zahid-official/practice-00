@@ -1,6 +1,6 @@
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { sendPasswordResetEmail, signInWithEmailAndPassword } from "firebase/auth";
 import auth from "../../firebase";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
@@ -11,6 +11,10 @@ const Login = () => {
   const [success, setSuccess] = useState(null);
   // state  for success message
   const [showPassword, setShowPassword] = useState(false);
+  // ref for reset password
+  const emailRef = useRef();
+
+
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -40,6 +44,25 @@ const Login = () => {
       });
   };
 
+
+  const handleReset = ()=>{
+    const email = emailRef.current.value;
+    if(!email){
+      setMessage('Invalid Email')
+      return;
+    }
+    // reset error message
+    setMessage("");
+    // reset success message
+    setSuccess("");
+
+    sendPasswordResetEmail(auth, email)
+    .then(()=> setSuccess('Reset Email Sent'))
+    .catch(error => setMessage(error.message))
+    
+
+  }
+
   return (
     <>
       <h2 className="text-3xl font-semibold text-center mb-5">
@@ -55,6 +78,7 @@ const Login = () => {
             <input
               type="email"
               name="userEmail"
+              ref={emailRef}
               placeholder="email"
               className="input input-bordered"
               required
@@ -80,9 +104,9 @@ const Login = () => {
             </span>
 
             <label className="label">
-              <a href="#" className="label-text-alt link link-hover">
+              <button onClick={handleReset} className="label-text-alt link link-hover">
                 Forgot password?
-              </a>
+              </button>
             </label>
           </div>
           <div className="form-control mt-6">

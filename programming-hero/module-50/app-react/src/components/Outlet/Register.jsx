@@ -84,12 +84,13 @@ const Register = () => {
               className="input input-bordered"
               required
             />
-            <span
+            <button
+              type="button"
               onClick={() => setShowPassword(!showPassword)}
-              className="absolute right-3 top-14 cursor-pointer"
+              className="absolute right-3 top-14"
             >
               {showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>}
-            </span>
+            </button>
           </div>
 
           <div className="form-control">
@@ -100,7 +101,7 @@ const Register = () => {
           </div>
 
           <div className="form-control mt-6">
-            <button className="btn btn-primary">Register</button>
+            <button type="submit" className="btn btn-primary">Register</button>
           </div>
         </form>
 
