@@ -1,8 +1,11 @@
+import Navbar from "./components/Navbar";
 
 const Root = () => {
     return (
         <div>
-            <h1>Root File</h1>
+            <header className="bg-base-200">
+                <Navbar></Navbar>
+            </header>
         </div>
     );
 };
