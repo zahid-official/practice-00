@@ -10,7 +10,7 @@ const Login = () => {
   // state  for success message
   const [success, setSuccess] = useState(null);
   // state  for success message
-  const [showPassword, setShowPassword] = useState(null);
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -27,6 +27,11 @@ const Login = () => {
     signInWithEmailAndPassword(auth, email, password)
       .then((result) => {
         console.log(result);
+        //verify email
+        if(!result.user.emailVerified){
+          setMessage('Verify You Email')
+          return
+        }
         setSuccess("Login Successful");
       })
       .catch((error) => {
@@ -68,11 +73,11 @@ const Login = () => {
             />
 
             {/* show password */}
-            <button 
+            <span
             onClick={()=> setShowPassword(!showPassword)}
-            className="absolute top-14 right-3">
+            className="absolute top-14 right-3 cursor-pointer">
               {showPassword? <FaEyeSlash /> : <FaEye />}
-            </button>
+            </span>
 
             <label className="label">
               <a href="#" className="label-text-alt link link-hover">

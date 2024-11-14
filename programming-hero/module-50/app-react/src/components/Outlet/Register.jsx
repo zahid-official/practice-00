@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, sendEmailVerification } from "firebase/auth";
 import auth from "../../firebase";
 import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
@@ -22,6 +22,7 @@ const Register = () => {
     setMessage("");
     // reset  success message
     setSuccess("");
+
     // check strong password
     const strongPasswordRegex =
       /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
@@ -39,12 +40,12 @@ const Register = () => {
     // auth by email & password
     createUserWithEmailAndPassword(auth, email, password)
       .then((result) => {
-        //verify email
-        if(!result.user.emailVerified){
-          setMessage('Verify You Email')
-          return
-        }
-        setSuccess('Registration Successful');
+        console.log(result)
+
+        // sendEmailVerification
+        sendEmailVerification(auth.currentUser)
+        .then(()=> setSuccess('Registration Successful, Check Email to Verify'))
+
       })
       .catch((error) => {
         console.log(error.message);
@@ -83,18 +84,12 @@ const Register = () => {
               className="input input-bordered"
               required
             />
-            <button
+            <span
               onClick={() => setShowPassword(!showPassword)}
-              className="absolute right-3 top-14"
+              className="absolute right-3 top-14 cursor-pointer"
             >
               {showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>}
-            </button>
-
-            <label className="label">
-              <a href="#" className="label-text-alt link link-hover">
-                Forgot password?
-              </a>
-            </label>
+            </span>
           </div>
 
           <div className="form-control">
