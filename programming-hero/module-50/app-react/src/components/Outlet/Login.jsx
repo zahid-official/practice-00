@@ -1,26 +1,46 @@
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
 import auth from "../../firebase";
+import { useState } from "react";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Login = () => {
+  // state  for error message
+  const [message, setMessage] = useState(null);
+  // state  for success message
+  const [success, setSuccess] = useState(null);
+  // state  for success message
+  const [showPassword, setShowPassword] = useState(null);
 
-    const handleSubmit = (event)=>{
-        event.preventDefault();
-        const email = event.target.userEmail.value;
-        const password = event.target.userPassword.value;
-        console.log(email, password)
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const email = event.target.userEmail.value;
+    const password = event.target.userPassword.value;
+    console.log(email, password);
 
-        // auth by email & password
-        createUserWithEmailAndPassword(auth, email, password)
-        .then(result => console.log(result))
-        .catch(error => console.log(error))
-    }
+    // reset error message
+    setMessage("");
+    // reset success message
+    setSuccess("");
 
+    // auth by email & password
+    signInWithEmailAndPassword(auth, email, password)
+      .then((result) => {
+        console.log(result);
+        setSuccess("Login Successful");
+      })
+      .catch((error) => {
+        console.log(error);
+        setMessage(error.message);
+      });
+  };
 
   return (
     <>
-      <h2 className="text-3xl font-semibold text-center mb-5">Login to your Account</h2>
+      <h2 className="text-3xl font-semibold text-center mb-5">
+        Login to your Account
+      </h2>
       <div className="card bg-base-100 w-full max-w-sm mx-auto pb-4 mb-5 shrink-0 shadow-2xl">
-        
         {/* form */}
         <form onSubmit={handleSubmit} className="card-body">
           <div className="form-control">
@@ -35,17 +55,25 @@ const Login = () => {
               required
             />
           </div>
-          <div className="form-control">
+          <div className="form-control relative">
             <label className="label">
               <span className="label-text">Password</span>
             </label>
             <input
-              type="password"
+              type= {showPassword? "text" : "password"}  
               name="userPassword"
               placeholder="password"
               className="input input-bordered"
               required
             />
+
+            {/* show password */}
+            <button 
+            onClick={()=> setShowPassword(!showPassword)}
+            className="absolute top-14 right-3">
+              {showPassword? <FaEyeSlash /> : <FaEye />}
+            </button>
+
             <label className="label">
               <a href="#" className="label-text-alt link link-hover">
                 Forgot password?
@@ -56,6 +84,15 @@ const Login = () => {
             <button className="btn btn-primary">Login</button>
           </div>
         </form>
+
+        <p className="text-center">Dont have an account? <span className="underline"><Link to='/register'>Sign up</Link></span></p>
+
+        {message && (
+          <p className="text-center text-red-700 font-semibold">{message}</p>
+        )}
+        {success && (
+          <p className="text-center text-green-700 font-semibold">{success}</p>
+        )}
       </div>
     </>
   );
