@@ -1,14 +1,13 @@
-import {
-  createUserWithEmailAndPassword,
-  sendEmailVerification,
-  updateProfile,
-} from "firebase/auth";
+import { sendEmailVerification, updateProfile } from "firebase/auth";
 import { Link } from "react-router-dom";
 import { auth } from "../../firebase";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { AuthContext } from "../../ContextProvider";
 
 const Register = () => {
+  const { createUser } = useContext(AuthContext);
+
   // state for success
   const [success, setSuccess] = useState("");
   // state for error
@@ -23,7 +22,6 @@ const Register = () => {
     const email = event.target.userEmail.value;
     const password = event.target.userPassword.value;
     const checkbox = event.target.termsCheckbox.checked;
-    console.log(checkbox);
 
     // reset states
     setSuccess("");
@@ -31,7 +29,7 @@ const Register = () => {
 
     // strong password
     const strongPasswordRegex =
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{4,}$/;
+      /^(?=(.*[a-z]))(?=(.*[A-Z]))(?=(.*\d))(?=(.*[\W_])).{6,}$/;
     if (!strongPasswordRegex.test(password)) {
       setErrorMessage("Make Password Strong");
       return;
@@ -44,9 +42,9 @@ const Register = () => {
     }
 
     // create email based account
-    createUserWithEmailAndPassword(auth, email, password)
+    createUser(email, password)
       .then((result) => {
-        console.log(result)
+        console.log(result);
         // verification email send
         sendEmailVerification(auth.currentUser)
           .then(setSuccess("Registration Successful"))

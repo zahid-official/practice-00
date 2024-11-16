@@ -1,10 +1,14 @@
-import { useRef, useState } from "react";
-import { sendPasswordResetEmail, signInWithEmailAndPassword } from "firebase/auth";
+import { useContext, useRef, useState } from "react";
+import { sendPasswordResetEmail } from "firebase/auth";
 import { Link } from "react-router-dom";
 import { auth } from "../../firebase";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { AuthContext } from "../../ContextProvider";
 
 const Login = () => {
+  const {loginUser} = useContext(AuthContext);
+  console.log(loginUser)
+
   // state for success
   const [success, setSuccess] = useState("");
   // state for error
@@ -25,7 +29,7 @@ const Login = () => {
     setErrorMessage("");
 
     // signIn by email based method
-    signInWithEmailAndPassword(auth, email, password)
+    loginUser(email, password)
       .then((result) => {
         if(!result.user.emailVerified){
           setErrorMessage("Verify Email")

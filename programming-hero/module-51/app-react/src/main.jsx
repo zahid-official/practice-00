@@ -5,6 +5,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "./Root";
 import Login from "./components/Outlet/Login";
 import Register from "./components/Outlet/Register";
+import ContextProvider from "./ContextProvider";
 
 const router = createBrowserRouter([
   {
@@ -12,19 +13,21 @@ const router = createBrowserRouter([
     element: <Root></Root>,
     children: [
       {
-        path: '/',
+        path: "/",
         element: <Login></Login>,
       },
       {
-        path: '/register',
+        path: "/register",
         element: <Register></Register>,
       },
-    ]
+    ],
   },
 ]);
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <ContextProvider>
+      <RouterProvider router={router} />
+    </ContextProvider>
   </StrictMode>
 );
