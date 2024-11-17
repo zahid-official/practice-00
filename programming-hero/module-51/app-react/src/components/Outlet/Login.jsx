@@ -6,7 +6,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { AuthContext } from "../../ContextProvider";
 
 const Login = () => {
-  const {loginUser} = useContext(AuthContext);
+  const {loginUser, socialMedia, googleProvider, twitterProvider, facebookProvider} = useContext(AuthContext);
 
   // state for success
   const [success, setSuccess] = useState("");
@@ -56,6 +56,23 @@ const Login = () => {
     .then(()=> setSuccess("Reset Email Sent"))
     .catch(error => setErrorMessage(error.message))
   }
+
+  // logIn provider based account
+  const handleSocial = (provider) => {
+    // reset states
+    setSuccess("");
+    setErrorMessage("");
+
+    socialMedia(provider)
+      .then((result) => {
+        console.log(result.user);
+        setSuccess("LogIn by Social Successful");
+      })
+      .catch((error) => {
+        console.log(error);
+        setErrorMessage(error.message);
+      });
+  };
 
   return (
     <>
@@ -118,6 +135,21 @@ const Login = () => {
                 <Link to="/register"> Sign Up</Link>
               </span>
             </p>
+
+            <div className="divider"></div>
+            <div className="mb-5 space-x-4">
+              <button onClick={()=> handleSocial(googleProvider)} className="btn">
+                Google
+              </button>
+
+              <button onClick={()=> handleSocial(facebookProvider)} className="btn">
+                Facebook
+              </button>
+              
+              <button onClick={()=> handleSocial(twitterProvider)} className="btn">
+                Twitter
+              </button>
+            </div>
 
             {success && (
               <p className="font-semibold text-green-700">{success}</p>

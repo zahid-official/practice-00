@@ -4,6 +4,7 @@ import { auth } from "../../firebase";
 import { useContext, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { AuthContext } from "../../ContextProvider";
+// import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);

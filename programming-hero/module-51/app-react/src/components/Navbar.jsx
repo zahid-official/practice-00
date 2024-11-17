@@ -77,7 +77,7 @@ const Navbar = () => {
                 <span>{user?.displayName}</span>
                 {/*রেজিস্ট্রারে এখানে user?.email দিলে ততক্ষণাত আসে কিন্তু displayName ততক্ষনাত আসে না কেন? রিলোডের পরে কেন আসে*/}
 
-                <button onClick={handleLogOut} className="btn">
+                <button onClick={handleLogOut} className="btn ml-4 btn-primary">
                   Log Out
                 </button>
                 {/* button এ যদি btn class ব্যবহার করা হয় তাহলে লোড হতে থাকে কেন?
@@ -86,7 +86,7 @@ const Navbar = () => {
               </>
             ) : (
               <>
-                <button>
+                <button className="btn ml-4 btn-primary">
                   <Link to="/">LogIn</Link>
                 </button>
               </>

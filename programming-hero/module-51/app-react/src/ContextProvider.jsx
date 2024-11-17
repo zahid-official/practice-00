@@ -5,6 +5,10 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signOut,
+  GoogleAuthProvider,
+  TwitterAuthProvider,
+  FacebookAuthProvider,
+  signInWithPopup,
 } from "firebase/auth";
 import { auth } from "./firebase";
 
@@ -39,7 +43,7 @@ const ContextProvider = ({ children }) => {
     };
   }, [user]);
 
-  // create user from firebase
+  // Register user
   const createUser = (email, password) => {
     setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
@@ -51,11 +55,21 @@ const ContextProvider = ({ children }) => {
     return signInWithEmailAndPassword(auth, email, password);
   };
 
-  //logout user
+  // logout user
   const logoutUser = () => {
     setLoading(true);
     return signOut(auth)
   };
+
+  // Login by Social
+  const googleProvider = new GoogleAuthProvider();
+  const twitterProvider = new TwitterAuthProvider();
+  const facebookProvider = new FacebookAuthProvider();
+  
+  const socialMedia = (provider)=>{
+    return signInWithPopup(auth, provider);
+  }
+
 
   //value of Context API
   const obj = {
@@ -64,6 +78,10 @@ const ContextProvider = ({ children }) => {
     createUser,
     loginUser,
     logoutUser,
+    socialMedia,
+    googleProvider,
+    twitterProvider,
+    facebookProvider,
   };
 
   return <AuthContext.Provider value={obj}>{children}</AuthContext.Provider>;
