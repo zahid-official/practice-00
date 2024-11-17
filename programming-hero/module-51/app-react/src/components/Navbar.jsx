@@ -41,6 +41,9 @@ const Navbar = () => {
               <li className="text-base font-semibold">
                 <NavLink to="/register">Register</NavLink>
               </li>
+              <li className="text-base font-semibold">
+                <NavLink to="/order">Order</NavLink>
+              </li>
             </ul>
           </div>
           <Link to="/" className="btn btn-ghost sm:text-4xl text-3xl font-bold">
@@ -55,6 +58,16 @@ const Navbar = () => {
             <li className="text-base font-semibold">
               <NavLink to="/register">Register</NavLink>
             </li>
+            {user && (
+              <>
+                <li className="text-base font-semibold">
+                  <NavLink to="/order">Order</NavLink>
+                </li>
+                <li className="text-base font-semibold">
+                  <NavLink to="/profile">Profile</NavLink>
+                </li>
+              </>
+            )}
           </ul>
         </div>
         <div className="navbar-end">
@@ -62,16 +75,19 @@ const Navbar = () => {
             {user ? (
               <>
                 <span>{user?.displayName}</span>
-                {/*রেজিস্ট্রারে এখানে user?.email দিলে ততক্ষণাত আসে কিন্তু displayName ততক্ষনাত 
-                আসে না কেন? রিলোডের পরে কেন আসে*/}
-                <button onClick={handleLogOut} className="btn btn-primary ml-3">
-                  Sign Out
+                {/*রেজিস্ট্রারে এখানে user?.email দিলে ততক্ষণাত আসে কিন্তু displayName ততক্ষনাত আসে না কেন? রিলোডের পরে কেন আসে*/}
+
+                <button onClick={handleLogOut} className="btn">
+                  Log Out
                 </button>
+                {/* button এ যদি btn class ব্যবহার করা হয় তাহলে লোড হতে থাকে কেন?
+                প্রাইভেট রাউটে তো নেভিগেট সেট করাই আছে, তাহলে লগআউটে লিংক না দিলে 
+                লোড হতে থাকে কেন? */}
               </>
             ) : (
               <>
-                <button className="btn btn-primary">
-                  <Link to="/">Login</Link>
+                <button>
+                  <Link to="/">LogIn</Link>
                 </button>
               </>
             )}

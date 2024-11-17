@@ -6,6 +6,9 @@ import Root from "./Root";
 import Login from "./components/Outlet/Login";
 import Register from "./components/Outlet/Register";
 import ContextProvider from "./ContextProvider";
+import Order from "./components/Outlet/Order";
+import PrivateRoute from "./PrivateRoute";
+import Profile from "./components/Outlet/Profile";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +22,22 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>,
+      },
+      {
+        path: "/order",
+        element: (
+          <PrivateRoute>
+            <Order></Order>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/profile",
+        element: (
+          <PrivateRoute>
+            <Profile></Profile>
+          </PrivateRoute>
+        ),
       },
     ],
   },

@@ -7,7 +7,6 @@ import { AuthContext } from "../../ContextProvider";
 
 const Login = () => {
   const {loginUser} = useContext(AuthContext);
-  console.log(loginUser)
 
   // state for success
   const [success, setSuccess] = useState("");
@@ -36,6 +35,7 @@ const Login = () => {
           return;
         }
         setSuccess("LogIn Successful")
+        event.target.reset();
       })
       .catch((error) => setErrorMessage(error.message));
   };

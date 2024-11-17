@@ -13,8 +13,11 @@ export const AuthContext = createContext(null);
 
 //component
 const ContextProvider = ({ children }) => {
+
   //state for users
   const [user, setUser] = useState(null);
+  //state for loading
+  const [loading, setLoading] = useState(true);
 
   //observer of users from firebase
   useEffect(() => {
@@ -22,9 +25,12 @@ const ContextProvider = ({ children }) => {
       if (userData) {
         console.log("Users Data Available");
         setUser(userData);
-      } else {
+        setLoading(false);
+      } 
+      else {
         console.log("Users Data Not Available");
         setUser(null);
+        setLoading(false);
       }
     });
 
@@ -35,22 +41,26 @@ const ContextProvider = ({ children }) => {
 
   // create user from firebase
   const createUser = (email, password) => {
+    setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
   // login user
   const loginUser = (email, password) => {
+    setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
   };
 
   //logout user
   const logoutUser = () => {
+    setLoading(true);
     return signOut(auth)
   };
 
   //value of Context API
   const obj = {
     user,
+    loading,
     createUser,
     loginUser,
     logoutUser,
