@@ -3,7 +3,7 @@ import profile from '/assets/user.png'
 
 const Navbar = () => {
     return (
-        <nav className='container mx-auto py-3 flex items-center justify-between'>
+        <nav className='py-3 flex items-center justify-between'>
             <div></div>
             <ul className="flex gap-3 text-[#706F6F]">
                 <li><Link to='/'>Home</Link></li>

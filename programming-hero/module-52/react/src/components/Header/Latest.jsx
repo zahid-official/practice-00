@@ -3,7 +3,7 @@ import Marquee from "react-fast-marquee";
 
 const Latest = () => {
   return (
-    <div className="container mx-auto flex items-center gap-3">
+    <div className="flex items-center gap-3">
       <p className="bg-[#D72050] text-white font-semibold text-lg px-8 py-3">
         Latest
       </p>
