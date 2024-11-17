@@ -1,7 +1,7 @@
-import Ads from "./Ads";
-import FindUs from "./FindUs";
-import QZone from "./QZone";
-import Social from "./Social";
+import Ads from "./Right/Ads";
+import FindUs from "./Right/FindUs";
+import QZone from "./Right/QZone";
+import Social from "./Right/Social";
 
 const Right = () => {
   return (

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 
 const Left = () => {
   const [categories, setCategories] = useState([]);
@@ -13,9 +14,9 @@ const Left = () => {
         All Categories ({categories.length})
       </h1>
 
-      <p className="flex flex-col gap-4 mt-8">
+      <p className="flex flex-col gap-4 mt-8 *:bg-white">
         {categories.map((item, idx) => (
-          <button key={idx} className="btn text-base font-bold">{item.category_name}</button>
+          <NavLink to={`/category/${item.category_id}`} key={idx} className="btn text-base font-bold">{item.category_name}</NavLink>
         ))}
       </p>
     </div>
