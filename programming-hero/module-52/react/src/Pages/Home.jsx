@@ -1,11 +1,15 @@
 import Header from "../components/Header";
 import Latest from "../components/Latest";
+import Navbar from "../components/Navbar";
 
 const Home = () => {
   return (
     <div>
-      <Header></Header>
-      <Latest></Latest>
+      <header>
+        <Header></Header>
+        <Latest></Latest>
+        <Navbar></Navbar>
+      </header>
     </div>
   );
 };
