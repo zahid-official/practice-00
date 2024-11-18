@@ -1,11 +1,14 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthContext";
 
 const Login = () => {
   // context API
-  const {user, login} = useContext(AuthContext);
-  console.log(user)
+  const {setUser, login} = useContext(AuthContext);
+
+  //use Location & navigate
+  const location = useLocation();
+  const direction = useNavigate();
 
   // handleSubmit
   const handleSubmit = (event)=>{
@@ -19,7 +22,8 @@ const Login = () => {
       //register account
       login(email, password)
       .then(result => {
-          console.log(result.user)
+          setUser(result.user);
+          direction(location?.state ? location.state : '/')
       })
       .catch(error => console.log(error))
 

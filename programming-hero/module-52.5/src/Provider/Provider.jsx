@@ -12,19 +12,24 @@ import {
 const Provider = ({ children }) => {
   // state
   const [user, setUser] = useState([]);
+  // loading state
+  const [loading, setLoading] = useState(true);
 
   //register account
   const register = (email, password) => {
+    setLoading(true);
     return createUserWithEmailAndPassword(authentication, email, password);
   };
 
   //login account
   const login = (email, password) => {
+    setLoading(true);
     return signInWithEmailAndPassword(authentication, email, password);
   };
 
   // signOut
   const logOut = ()=>{
+    setLoading(true);
     return signOut(authentication);
   }
 
@@ -33,6 +38,7 @@ const Provider = ({ children }) => {
   useEffect(() => {
     const observer = onAuthStateChanged(authentication, (userData) => {
       setUser(userData);
+      setLoading(false);
     });
     
     return ()=>{
@@ -42,6 +48,7 @@ const Provider = ({ children }) => {
 
   const information = {
     user,
+    loading,
     setUser,
     register,
     login,
