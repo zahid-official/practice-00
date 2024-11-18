@@ -1,10 +1,13 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthContext";
 
 const Login = () => {
   // context API
   const {setUser, login} = useContext(AuthContext);
+
+  // state for error
+  const [error, setError] = useState({});
 
   //use Location & navigate
   const location = useLocation();
@@ -25,7 +28,7 @@ const Login = () => {
           setUser(result.user);
           direction(location?.state ? location.state : '/')
       })
-      .catch(error => console.log(error))
+      .catch(err => setError({...error, login: err.message}))
 
   }
 
@@ -60,11 +63,15 @@ const Login = () => {
               className="input input-bordered"
               required
             />
+
             <label className="label">
               <a href="#" className="label-text-alt link link-hover">
                 Forgot password?
               </a>
             </label>
+
+            {/* error */}
+            {error.login  && <span className="label text-red-500 text-sm">{error.login}</span>}
           </div>
 
           <div className="form-control mt-6">

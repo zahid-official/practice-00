@@ -1,31 +1,41 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthContext";
 
 const Register = () => {
-    // context API
-    const {user, setUser, register} = useContext(AuthContext);
-    console.log(user)
+  // context API
+  const { setUser, register } = useContext(AuthContext);
 
-    // handleSubmit
-    const handleSubmit = (event)=>{
-        event.preventDefault();
+  // state for error
+  const [error, setError] = useState({});
 
-        //get input value
-        const form = new FormData(event.target);
-        // const name = form.get('userName');
-        // const photo = form.get('photo');
-        const email = form.get('email');
-        const password = form.get('password');
+  // handleSubmit
+  const handleSubmit = (event) => {
+    event.preventDefault();
 
-        //register account
-        register(email, password)
-        .then(result => {
-            setUser(result.user)
-        })
-        .catch(error => console.log(error))
 
+
+    //get input value
+    const form = new FormData(event.target);
+    const name = form.get("userName");
+
+    //error
+    setError({...error, name: ''})
+    if(name.length < 5){
+      setError({...error, name: "Name must be more then 5 letters"});
+      return;
     }
+    // const photo = form.get('photo');
+    const email = form.get("email");
+    const password = form.get("password");
+
+    //register account
+    register(email, password)
+      .then((result) => {
+        setUser(result.user);
+      })
+      .catch((err) => console.log(err));
+  };
 
   return (
     <div>
@@ -36,8 +46,9 @@ const Register = () => {
             {/* name */}
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Name</span>
-              </label>
+              <span className="label-text">Name</span>
+            </label>
+
               <input
                 type="text"
                 name="userName"
@@ -45,6 +56,9 @@ const Register = () => {
                 className="input input-bordered"
                 required
               />
+
+              {error.name && <label className="label"> <span className="label-text text-red-500">{error.name}</span>
+              </label>}
             </div>
 
             {/* photo-url */}
