@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>events</title>
+</head>
+<body>
+    <input id="input-triggered" type="text">
+    <button id="triggered">Mouse Enter</button>
+
+    <section id="section">
+        <!-- <ul id="ul">
+            <li id="item1">Lorem, ipsum dolor.</li>
+            <li id="item2">Corrupti, cum quasi!</li>
+            <li id="item3">Officia, molestias veritatis?</li>
+            <li id="item4">Enim, laboriosam quos?</li>
+            <li id="item5">Asperiores, unde rem.</li>
+        </ul> -->
+
+
+        <ul id="list">
+            <li class="product">Lorem, ipsum dolor.</li>
+            <li class="product">Excepturi, minima? Esse.</li>
+            <li class="product">Aperiam, totam aliquid?</li>
+            <li class="product">Nisi, esse consequuntur!</li>
+            <li class="product">Vitae, cupiditate molestiae?</li>
+        </ul>
+        <button id="add-element">Add new element</button>
+
+    </section>
+
+    
+
+
+    <script>
+        // event delegation .
+
+        // wrong way
+        // const products = document.getElementsByClassName('product');
+        // for(let product of products){
+        //     product.addEventListener('click',function(event){
+        //         event.target.parentNode.removeChild(event.target);
+        //     })
+        // }
+
+
+        document.getElementById('list').addEventListener('click', function(event){
+            event.target.parentNode.removeChild(event.target);
+        })
+
+        document.getElementById('add-element').addEventListener('click', function(){
+            const created = document.createElement('li');
+            created.innerText = 'Created Element by JS';
+            document.getElementById('list').appendChild(created);
+        })
+
+
+
+
+
+
+
+
+        //event bubbling
+        // document.getElementById('section').addEventListener('click', function(event){
+        //     console.log('section clicked');
+        // })
+        // document.getElementById('ul').addEventListener('click', function(event){
+        //     console.log('ul clicked');
+        //     event.stopPropagation();
+        // })
+        // document.getElementById('item2').addEventListener('click', function(event){
+        //     console.log('item1 clicked');
+        //     event.stopImmediatePropagation();
+        // })
+        // document.getElementById('item2').addEventListener('click', function(event){
+        //     console.log('item2 clicked');
+        // })
+
+
+
+        // document.getElementById('triggered').addEventListener('mouseenter', function(){
+        //     console.log('hello');
+        // })
+        // document.getElementById('triggered').addEventListener('mousemove', function(){
+        //     console.log('moving');
+        // })
+        // document.getElementById('input-triggered').addEventListener('focus', function(){
+        //     console.log('we focused');
+        // })
+        // document.getElementById('input-triggered').addEventListener('blur', function(){
+        //     console.log('now blur');
+        // })
+        // document.getElementById('input-triggered').addEventListener('keydown', function (event){
+        //     console.log(event.target.value);
+        // })
+        // document.getElementById('input-triggered').addEventListener('keypress', function (event){
+        //     console.log(event.target.value);
+        // })
+        // document.getElementById('input-triggered').addEventListener('keyup', function (event){
+        //     console.log(event.target.value);
+        // })
+
+        </script>
+</body>
+</html>
