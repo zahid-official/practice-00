@@ -1,0 +1,45 @@
+[
+    {
+      "id": 1,
+      "img": "https://ibb.co.com/NtR19gt",
+      "name": "iPhone 14",
+      "price": 799.99,
+      "description": "The iPhone 14 features a stunning Super Retina XDR display, A15 Bionic chip, and 5G connectivity for a faster, smoother experience."
+    },
+    {
+      "id": 2,
+      "img": "https://ibb.co.com/nmvdTmt",
+      "name": "Samsung Galaxy S23",
+      "price": 849.99,
+      "description": "The Galaxy S23 boasts a Dynamic AMOLED 2X display, Snapdragon 8 Gen 2 chip, and a powerful triple-camera system for stunning photos."
+    },
+    {
+      "id": 3,
+      "img": "https://ibb.co.com/RzCcghP",
+      "name": "Google Pixel 8",
+      "price": 699.00,
+      "description": "With Google Tensor G3 chip, a 50MP camera, and AI-powered features, the Pixel 8 delivers an exceptional Android experience."
+    },
+    {
+      "id": 4,
+      "img": "https://ibb.co.com/8dv4qGx",
+      "name": "OnePlus 11",
+      "price": 749.99,
+      "description": "The OnePlus 11 offers a 6.7-inch AMOLED display, Snapdragon 8 Gen 2 processor, and a powerful 50MP camera system."
+    },
+    {
+      "id": 5,
+      "img": "https://ibb.co.com/S5RzdRf",
+      "name": "Xiaomi Mi 13",
+      "price": 699.00,
+      "description": "The Mi 13 delivers flagship performance with its Snapdragon 8 Gen 2 chipset, 50MP Leica camera, and vibrant AMOLED display."
+    },
+    {
+      "id": 6,
+      "img": "https://ibb.co.com/dLQg7dy",
+      "name": "Samsung Galaxy S21",
+      "price": 1299.99,
+      "description": "The Galaxy S21 is a pro-grade phone with a 6.5-inch OLED display, Snapdragon 8 Gen 2 chip, and exceptional camera capabilities."
+    }
+  ]
+  
