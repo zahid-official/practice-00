@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interface</title>
+
+    <!-- daisy-css -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <!-- tailwind-css -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- main-css -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="phone h-screen flex items-center">
+        <div class="mockup-phone">
+            <div class="camera"></div>
+            <div class="display">
+              <div class="artboard artboard-demo phone-3">
+                
+                <!-- current balance -->
+                <div class="stats shadow">
+                    <div class="stat">
+                      <div id="current-balance" class="stat-value">8900</div>
+                      <div class="stat-desc text-center font-bold">Balance</div>
+                    </div>
+                </div>
+
+                <div class="divider"></div>
+
+                <!-- buttons -->
+                <div class="text-center space-x-3 space-y-4">
+                    <button id="btn-addMoney" class="btn btn-lg">Add Money</button>
+                    <button id="btn-cashout" class="btn btn-lg">Cash Out</button>  
+                    <button id="btn-transactions" class="btn btn-lg">Transactions History</button>  
+                </div>
+                
+                <div class="divider"></div>
+
+                
+                <!-- add money -->
+                <div id="form-addMoney" class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+                    <form class="card-body">
+                      <div class="form-control">
+                        <label class="label">
+                          <span class="label-text">Add Money</span>
+                        </label>
+                        <input id="add-amount" type="text" placeholder="Amount" class="input input-bordered" required />
+                      </div>
+                      <div class="form-control">
+                        <label class="label">
+                          <span class="label-text">Pin</span>
+                        </label>
+                        <input id="add-pin" type="text" placeholder="Enter Your Pin" class="input input-bordered" required />
+                      </div>
+                      <div class="form-control mt-6">
+                        <button id="add-button" class="btn btn-primary">Add Amount</button>
+                      </div>
+                    </form>
+                </div>
+
+
+                <!-- Cash out -->
+                <div id="form-cashout" class="hidden card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+                    <form class="card-body">
+                      <div class="form-control">
+                        <label class="label">
+                          <span class="label-text">Cashout</span>
+                        </label>
+                        <input id="cashout-amount" type="text" placeholder="Amount" class="input input-bordered" required />
+                      </div>
+                      <div class="form-control">
+                        <label class="label">
+                          <span class="label-text">Pin</span>
+                        </label>
+                        <input id="cashout-pin" type="text" placeholder="Enter Your Pin" class="input input-bordered" required />
+                      </div>
+                      <div class="form-control mt-6">
+                        <button id="cashout-button" class="btn btn-primary">Cash Out</button>
+                      </div>
+                    </form>
+                </div>
+
+                <!-- transactions history -->
+                 <div id="form-transactions" class="hidden text-center">
+                  <h1 class="text-3xl text-red-700 mb-4">Transactions</h1>
+                 </div>
+
+              </div>
+            </div>
+        </div>
+    </div>
+    <script src="utilites.js"></script>
+    <script src="interface.js"></script>
+</body>
+</html>
