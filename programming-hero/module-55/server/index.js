@@ -1,4 +1,4 @@
-const { MongoClient, ServerApiVersion } = require('mongodb');
+const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
 const express = require('express');
 const cors = require('cors');
 const app = express();
@@ -28,14 +28,29 @@ async function run() {
   try {
     // Connect the client to the server	(optional starting in v4.7)
     await client.connect();
+
     const database  = client.db('usersDB');
     const usersList = database.collection('users');
 
-    // receive data from client to server and send that to DB
+    // Create Data in DB
     app.post('/users', async(req, res) => {
       const user = req.body;
-      console.log(user)
       const result = await usersList.insertOne(user);
+      res.send(result);
+    })
+
+    // read DB Data
+    app.get('/users', async(req, res)=>{
+      const cursor = usersList.find();
+      const result = await cursor.toArray();
+      res.send(result);
+    })
+
+    // Delete Data from DB
+    app.delete('/users/:id', async(req, res)=>{
+      const id = req.params.id;
+      const qurey = {_id: new ObjectId(id)}
+      const result = await usersList.deleteOne(qurey);
       res.send(result);
     })
 
