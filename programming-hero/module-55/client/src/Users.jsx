@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 const Users = () => {
   const data = useLoaderData();
@@ -13,7 +13,7 @@ const Users = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        const remain = dbData.filter(item => item._id !== id);
+        const remain = dbData.filter((item) => item._id !== id);
         setDbData(remain);
       });
   };
@@ -24,6 +24,9 @@ const Users = () => {
       {dbData.map((user) => (
         <p key={user._id}>
           {user.name} || {user.email}
+          <Link to={`/update/${user._id}`}>
+            <button className="btn btn-info mx-6">Update</button>
+          </Link>
           <button
             onClick={() => handleDelete(user._id)}
             className="btn btn-error ml-5  text-white font-bold"
