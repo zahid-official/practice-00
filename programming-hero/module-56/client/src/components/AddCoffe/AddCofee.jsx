@@ -1,28 +1,37 @@
+import Swal from 'sweetalert2'
+
 const AddCofee = () => {
+  // handleSubmit
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const name = form.name.value;
+    const chef = form.chef.value;
+    const price = form.price.value;
+    const taste = form.taste.value;
+    const category = form.category.value;
+    const details = form.details.value;
+    const photo = form.photo.value;
+    const coffee = { name, chef, price, taste, category, details, photo };
 
-    // handleSubmit
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        const form = event.target;
-        const name = form.name.value;
-        const chef = form.chef.value;
-        const price = form.price.value;
-        const taste = form.taste.value;
-        const category = form.category.value;
-        const details = form.details.value;
-        const photo = form.photo.value;
-        const coffee = {name, chef, price, taste, category, details, photo}
-
-        fetch('http://localhost:5000/coffees', {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json',
-            },
-            body: JSON.stringify(coffee),
+    fetch("http://localhost:5000/coffees", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(coffee),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        Swal.fire({
+          title: 'Successful',
+          text: 'Do you want to continue',
+          icon: 'success',
+          confirmButtonText: 'Ok'
         })
-        .then(res => res.json())
-        .then(data => console.log(data))
-    }
+      });
+  };
 
   return (
     <div className={`bg-[url(/assets/11.bg.png)]`}>

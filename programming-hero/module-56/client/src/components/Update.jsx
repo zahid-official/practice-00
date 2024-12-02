@@ -1,4 +1,5 @@
 import { useLoaderData } from "react-router-dom";
+import Swal from 'sweetalert2'
 
 const Update = () => {
   const data = useLoaderData();
@@ -25,7 +26,16 @@ const Update = () => {
       body: JSON.stringify(coffee),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => {console.log(data)
+        if(data.modifiedCount){
+          Swal.fire({
+            title: 'Successful',
+            text: 'Do you want to continue',
+            icon: 'success',
+            confirmButtonText: 'Updated'
+          })
+        }
+      });
   };
   return (
     <div className={`bg-[url(/assets/11.bg.png)]`}>
