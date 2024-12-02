@@ -1,4 +1,5 @@
-import { useLoaderData } from "react-router-dom";
+import { FaArrowLeft } from "react-icons/fa";
+import { Link, useLoaderData } from "react-router-dom";
 import Swal from 'sweetalert2'
 
 const Update = () => {
@@ -30,7 +31,7 @@ const Update = () => {
         if(data.modifiedCount){
           Swal.fire({
             title: 'Successful',
-            text: 'Do you want to continue',
+            text: 'Updated coffee details',
             icon: 'success',
             confirmButtonText: 'Updated'
           })
@@ -40,6 +41,11 @@ const Update = () => {
   return (
     <div className={`bg-[url(/assets/11.bg.png)]`}>
       <div className="container mx-auto py-32 px-4">
+      <Link to={'/'}>
+          <h2 className="flex mb-5 ml-16 items-center gap-2 rancho text-4xl font-semibold text-[#372727]">
+            <FaArrowLeft size={23} /> Back to home
+          </h2>
+        </Link>
         <div className="card bg-[#F4F3F0] lg:w-11/12 mx-auto rounded-none py-20 md:px-5">
           <form onSubmit={handleSubmit} className="card-body text-center">
             <div className="pb-6 space-y-3">

@@ -3,11 +3,13 @@ import Home from "../Pages/Home";
 import Layout from "../Layout/Layout";
 import AddCofee from "../components/AddCoffe/AddCofee";
 import Update from "../components/Update";
+import Error from "../components/Error";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout></Layout>,
+    errorElement: <Error></Error>,
     children: [
       {
         path: '/',

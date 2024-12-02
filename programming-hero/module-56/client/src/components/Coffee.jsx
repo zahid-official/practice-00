@@ -8,7 +8,7 @@ const Coffee = ({ coffee, coffees, setCoffees }) => {
   const handleDelete = (id) => {
     Swal.fire({
       title: "Are you sure?",
-      text: "You won't be able to revert this!",
+      text: "Are you sure that you want to delete it?",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
@@ -25,7 +25,7 @@ const Coffee = ({ coffee, coffees, setCoffees }) => {
             if (data.deletedCount > 0) {
               Swal.fire({
                 title: "Deleted!",
-                text: "Your file has been deleted.",
+                text: "Deleted coffee details.",
                 icon: "success",
               });
             }
