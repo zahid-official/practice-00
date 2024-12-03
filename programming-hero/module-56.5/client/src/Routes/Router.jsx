@@ -6,6 +6,8 @@ import Update from "../components/Update";
 import Error from "../components/Error";
 import Login from "../components/Auth/Login";
 import Register from "../components/Auth/Register";
+import User from "../components/Auth/User";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +23,10 @@ const router = createBrowserRouter([
       {
         path: '/addCoffee',
         element: <AddCofee></AddCofee>
+      },
+      {
+        path: '/user',
+        element: <PrivateRoute><User></User></PrivateRoute>
       },
       {
         path: '/update/:id',

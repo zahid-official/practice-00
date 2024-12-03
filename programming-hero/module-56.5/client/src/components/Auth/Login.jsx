@@ -1,11 +1,18 @@
-import { useContext } from "react";
+import { useContext, useRef } from "react";
 import { FaArrowLeft } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import ContexAPI from "./ContexAPI";
+import { toast } from "react-toastify";
 
 const Login = () => {
   //useContext
-  const {login} = useContext(ContexAPI);
+  const { login, resetPassword } = useContext(ContexAPI);
+  // useRef
+  const emailRef = useRef();
+  // useLocation
+  const location = useLocation();
+  //  useNavigate
+  const navigate = useNavigate();
 
   // handleSubmit
   const handleSubmit = (event) => {
@@ -16,10 +23,23 @@ const Login = () => {
 
     // login
     login(email, password)
-    .then(result => console.log(result.user))
-    .catch(error => console.log(error.message))
-
+      .then((result) => {
+        console.log(result.user);
+        toast.success("Login Successfully");
+        navigate(location?.state ? location.state : '/');
+      })
+      .catch((error) => toast.error(error.message));
   };
+
+  // handleForget
+  const handleForget = ()=>{
+    const email = emailRef.current.value;
+    resetPassword(email)
+    .then(()=>{
+      toast.success('Password reset email sent')
+    })
+    .catch(error => toast.error(error.message))
+  }
   return (
     <>
       <div className={`bg-[url(/assets/11.bg.png)]`}>
@@ -44,6 +64,7 @@ const Login = () => {
                 <input
                   type="email"
                   name="email"
+                  ref={emailRef}
                   placeholder="email"
                   className="input rounded-lg"
                   required
@@ -63,9 +84,9 @@ const Login = () => {
                   required
                 />
                 <label className="label mt-3">
-                  <Link className="label-text-alt link link-hover">
+                  <span onClick={handleForget} className="label-text-alt link link-hover">
                     Forgot password?
-                  </Link>
+                  </span>
                 </label>
               </div>
 
@@ -78,8 +99,8 @@ const Login = () => {
             </form>
 
             <p className="text-center">
-              {`Don't have an account? `}{" "}
-              <Link to={'/register'}>
+              {`Don't have an account? `}
+              <Link to={"/register"}>
                 <span className="underline font-semibold">Sign up</span>
               </Link>
             </p>

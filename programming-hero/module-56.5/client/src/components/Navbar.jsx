@@ -1,7 +1,22 @@
+import { useContext } from "react";
 import logo from "/assets/01.logo.png";
 import { Link, NavLink } from "react-router-dom";
+import ContexAPI from "./Auth/ContexAPI";
+import { toast } from "react-toastify";
 
 const Navbar = () => {
+  // useContext
+  const { user, logout } = useContext(ContexAPI);
+
+  // handleLogout
+  const handleLogout = () => {
+    logout()
+    .then(()=>{
+      toast.success("Sign Out Successfully");
+    })
+    .catch(error => console.log(error.message))
+  }
+
   const links = (
     <>
       <li className="text-lg font-semibold">
@@ -17,7 +32,7 @@ const Navbar = () => {
   );
   return (
     <>
-      <div className="navbar justify-between py-6 xl:px-20 md:px-10 sm:px-4 bg-[url(/assets/02.bg.jpg)] bg-center text-white">
+      <div className="navbar justify-around py-6 bg-[url(/assets/02.bg.jpg)] bg-center text-white">
         <div className="">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -38,7 +53,7 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu bg-[#7e644a] menu-sm dropdown-content rounded-box z-[1] mt-3 w-52 p-2 shadow text-black"
+              className="menu bg-[#7e644a] menu-sm dropdown-content rounded-box z-[1] mt-3 w-52 p-2 shadow"
             >
               {links}
             </ul>
@@ -58,21 +73,24 @@ const Navbar = () => {
         </div>
 
         <div className="hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">{links}</ul>
+          <ul className="menu menu-horizontal px-1 ">{links}</ul>
         </div>
 
-        <div className="space-x-3">
-          <Link to={"/login"}>
-            <button className="btn rounded rancho text-xl bg-[#c99d62] border-none hover:text-white hover:bg-transparent hover:outline hover:outline-1 hover:outline-white transition sm:px-8 px-6 duration-500">
-              Login
-            </button>
-          </Link>
+        <div className="space-x-3 text-right">
+          {user?.email && <span>Hi, {user?.displayName}</span>}
 
-          <Link to={"/register"}>
-            <button className="btn rounded rancho text-xl bg-[#c99d62] border-none hover:text-white hover:bg-transparent hover:outline hover:outline-1 hover:outline-white transition sm:px-6 duration-500">
-              Sign Up
+          {user?.email ? (
+            <button onClick={handleLogout} className="btn rounded rancho text-xl bg-[#c99d62] border-none hover:text-white hover:bg-transparent hover:outline hover:outline-1 hover:outline-white transition sm:px-8 px-6 duration-500">
+              Sign Out
             </button>
-          </Link>
+          ) : (
+            <Link to={"/login"}>
+              <p className="lg:px-[125px]"></p>
+              <button className="btn rounded rancho text-xl bg-[#c99d62] border-none hover:text-white hover:bg-transparent hover:outline hover:outline-1 hover:outline-white transition sm:px-8 px-6 duration-500">
+                Login
+              </button>
+            </Link>
+          )}
         </div>
       </div>
     </>

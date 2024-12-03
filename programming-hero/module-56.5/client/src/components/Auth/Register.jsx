@@ -1,27 +1,39 @@
 import { useContext } from "react";
 import { FaArrowLeft } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import ContexAPI from "./ContexAPI";
+import { toast } from "react-toastify";
 
 const Register = () => {
-
-    // useContext
-    const {register} = useContext(ContexAPI);
-
+  // useContext
+  const { register, profile, setUser } = useContext(ContexAPI);
+  // useNavigate
+  const navigate = useNavigate();
 
   // handleSubmit
   const handleSubmit = (event) => {
     event.preventDefault();
     const form = event.target;
-    // const name = form.name.value;
+    const name = form.name.value;
     const email = form.email.value;
     const password = form.password.value;
 
     // register
     register(email, password)
-    .then(result => console.log(result.user))
-    .catch(error => console.log(error.message))
+      .then((result) => {
+        setUser(result.user);
 
+        // update profile
+        profile({ displayName: name })
+        .then(()=>{
+          setUser({...result.user, displayName: name})
+          toast.success("Registration Successful");
+          navigate('/');
+        })
+        .catch(error => toast.error(error.message))
+
+      })
+      .catch((error) => toast.error(error.message));
   };
   return (
     <>
@@ -91,7 +103,7 @@ const Register = () => {
 
             <p className="text-center">
               {`Don't have an account? `}{" "}
-              <Link to={'/login'}>
+              <Link to={"/login"}>
                 <span className="underline font-semibold">Login</span>
               </Link>
             </p>
