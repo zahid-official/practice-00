@@ -8,6 +8,7 @@ import Login from "../components/Auth/Login";
 import Register from "../components/Auth/Register";
 import User from "../components/Auth/User";
 import PrivateRoute from "./PrivateRoute";
+import UpdateUsers from "../components/UpdateUsers";
 
 const router = createBrowserRouter([
   {
@@ -40,6 +41,11 @@ const router = createBrowserRouter([
       {
         path: '/register',
         element: <Register></Register>
+      },
+      {
+        path: '/updateUsers/:id',
+        element: <PrivateRoute><UpdateUsers></UpdateUsers></PrivateRoute>,
+        loader: ({params}) => fetch(`http://localhost:5000/updateUsers/${params.id}`)
       },
       
     ]

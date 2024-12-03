@@ -107,6 +107,42 @@ async function run() {
       res.send(result);
     });
 
+    // update user
+    app.get('/updateUsers/:id', async(req, res) => {
+      const id = req.params.id;
+      const query = {_id: new ObjectId(`${id}`)};
+      const result = await userCollection.findOne(query);
+      res.send(result);
+    })
+    app.put('/updateUsers/:id', async(req, res) => {
+      const id = req.params.id;
+      const updatedData = req.body;
+      const query = {_id: new ObjectId(`${id}`)};
+      const options = { upsert: true };
+      const updateUser = {
+        $set: {
+          name: updatedData.name,
+          email: updatedData.email,
+        }
+      }
+      const result = await userCollection.updateOne(query, updateUser, options);
+      res.send(result);
+    })
+
+    // update existing Data
+    app.patch('/updateUsers', async(req, res) => {
+      const id = req.body.email;
+      const query = {email:id}
+      const loggedTime = {
+        $set: {
+          loginTime: req.body.loginTime,
+        }
+      }
+
+      const result = await userCollection.updateOne(query, loggedTime);
+      res.send(result);
+    })
+
     await client.db("admin").command({ ping: 1 });
     console.log(
       "Pinged your deployment. You successfully connected to MongoDB!"

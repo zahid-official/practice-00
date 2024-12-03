@@ -25,6 +25,20 @@ const Login = () => {
     login(email, password)
       .then((result) => {
         setUser(result.user);
+        const loginTime = result.user?.metadata?.lastSignInTime;
+        const updateData = {email, loginTime};
+
+        fetch(`http://localhost:5000/updateUsers`, {
+          method: "PATCH",
+          headers: {
+            'content-type' : 'application/json',
+          },
+          body: JSON.stringify(updateData),
+        })
+        .then(res => res.json())
+        .then(data => console.log(data))
+
+
         toast.success("Login Successfully");
         navigate(location?.state ? location.state : '/');
       })

@@ -1,12 +1,14 @@
 import { useContext } from "react";
 import { FaArrowLeft } from "react-icons/fa";
-import { Link, useNavigate } from "react-router-dom";
-import ContexAPI from "./ContexAPI";
+import { Link, useLoaderData, useNavigate } from "react-router-dom";
+import ContexAPI from "./Auth/ContexAPI";
 import { toast } from "react-toastify";
 
-const Register = () => {
+const UpdateUsers = () => {
   // useContext
-  const { register, profile, setUser, setLoading } = useContext(ContexAPI);
+  const { profile, user, setUser, setLoading } = useContext(ContexAPI);
+  // useLoaderData
+  const { _id: id, name, email } = useLoaderData();
   // useNavigate
   const navigate = useNavigate();
 
@@ -16,53 +18,45 @@ const Register = () => {
     const form = event.target;
     const name = form.name.value;
     const email = form.email.value;
-    const password = form.password.value;
-    
+    const updatedData = { name, email };
 
-    // register
-    register(email, password)
-      .then((result) => {
-        setUser(result.user);
-        const registrationTime = result.user?.metadata?.creationTime;
-        const newUser = { name, email, registrationTime};
-
-        // create user in DB
-        fetch("http://localhost:5000/users", {
-          method: "POST",
+    // update profile
+    profile({ displayName: name })
+      .then(() => {
+        fetch(`http://localhost:5000/updateUsers/${id}`, {
+          method: "PUT",
           headers: {
             "content-type": "application/json",
           },
-          body: JSON.stringify(newUser),
+          body: JSON.stringify(updatedData),
         })
           .then((res) => res.json())
-          .then((data) => console.log(data));
-
-        // update profile
-        profile({ displayName: name })
-          .then(() => {
-            setUser({ ...result.user, displayName: name });
+          .then((data) => {
+            console.log(data);
+            setUser({ ...user, displayName: name, email: email });
             setLoading(false);
-            toast.success("Registration Successful");
-            navigate("/");
-          })
-          .catch((error) => toast.error(error.message));
+            toast.success("Data Updated Successfully");
+            navigate('/user');
+          });
       })
       .catch((error) => toast.error(error.message));
   };
+
+  console.log(name, email, id);
   return (
     <>
       <div className={`bg-[url(/assets/11.bg.png)]`}>
         <div className="py-32 px-3">
-          <Link to={"/"}>
+          <Link to={"/user"}>
             <h2 className="flex mb-5 sm:ml-16 items-center gap-2 rancho text-4xl font-semibold text-[#372727]">
-              <FaArrowLeft size={23} /> Back to home
+              <FaArrowLeft size={23} /> Back to users
             </h2>
           </Link>
 
           <div className="card bg-[#F4F3F0] max-w-lg mx-auto rounded-none py-20 md:px-5">
             <form onSubmit={handleSubmit} className="card-body text-center">
               <h2 className="sm:text-5xl mb-8 text-4xl font-semibold rancho">
-                Join Us Today!
+                Update Users Data
               </h2>
 
               {/* name */}
@@ -74,6 +68,7 @@ const Register = () => {
                   type="text"
                   name="name"
                   placeholder="name"
+                  defaultValue={name}
                   className="input rounded-lg"
                   required
                 />
@@ -88,20 +83,7 @@ const Register = () => {
                   type="email"
                   name="email"
                   placeholder="email"
-                  className="input rounded-lg"
-                  required
-                />
-              </div>
-
-              {/* password */}
-              <div className="form-control flex-1">
-                <label className="label">
-                  <span className="label-text font-semibold">Password</span>
-                </label>
-                <input
-                  type="password"
-                  name="password"
-                  placeholder="password"
+                  defaultValue={email}
                   className="input rounded-lg"
                   required
                 />
@@ -110,17 +92,10 @@ const Register = () => {
               {/* submit */}
               <div className="form-control mt-8">
                 <button className="btn rancho font-semibold text-2xl h-14 bg-[#d2b48c] hover:bg-[#c2a27a] text-black border-red-950 hover:border-red-950 ">
-                  Sign Up
+                  Update
                 </button>
               </div>
             </form>
-
-            <p className="text-center">
-              {`Don't have an account? `}{" "}
-              <Link to={"/login"}>
-                <span className="underline font-semibold">Login</span>
-              </Link>
-            </p>
           </div>
         </div>
       </div>
@@ -128,4 +103,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default UpdateUsers;

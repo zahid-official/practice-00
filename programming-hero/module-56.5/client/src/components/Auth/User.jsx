@@ -1,7 +1,8 @@
 import { useContext, useEffect } from "react";
 import ContexAPI from "./ContexAPI";
-import { FaTrash } from "react-icons/fa";
+import { FaTrash, FaPen } from "react-icons/fa";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 const User = () => {
   // useContext
@@ -37,7 +38,7 @@ const User = () => {
               text: "Your file has been deleted.",
               icon: "success",
             });
-            setCoffeUser(coffeUser.filter(item => item._id !== id));
+            setCoffeUser(coffeUser.filter((item) => item._id !== id));
           });
       }
     });
@@ -56,17 +57,22 @@ const User = () => {
               <th></th>
               <th>Name</th>
               <th>Email</th>
+              <th>Register At</th>
+              <th>Login At</th>
               <th>Remove</th>
+              <th>Edit Data</th>
             </tr>
           </thead>
 
           {/* body */}
           <tbody>
             {coffeUser?.map((item, idx) => (
-              <tr key={item._id} className="hover">
+              <tr key={item?._id} className="hover">
                 <th>{idx + 1}</th>
-                <td>{item.name}</td>
-                <td>{item.email}</td>
+                <td>{item?.name}</td>
+                <td>{item?.email}</td>
+                <td>{item?.registrationTime}</td>
+                <td>{item?.loginTime}</td>
                 <td>
                   <button
                     onClick={() => handleDelete(item._id)}
@@ -74,6 +80,14 @@ const User = () => {
                   >
                     <FaTrash size={22} color="red"></FaTrash>
                   </button>
+                </td>
+
+                <td>
+                  <Link to={`/updateUsers/${item._id}`}>
+                    <button className="btn bg-transparent">
+                      <FaPen size={22} color="green"></FaPen>
+                    </button>
+                  </Link>
                 </td>
               </tr>
             ))}
