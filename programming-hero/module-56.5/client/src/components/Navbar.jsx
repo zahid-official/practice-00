@@ -25,7 +25,7 @@ const Navbar = () => {
       <li className="text-lg font-semibold">
         <NavLink to={"/addCoffee"}>Add Coffee</NavLink>
       </li>
-      <li className="text-lg font-semibold">
+      <li className="text-lg font-semibold text-white">
         <NavLink to={"/user"}>User</NavLink>
       </li>
     </>

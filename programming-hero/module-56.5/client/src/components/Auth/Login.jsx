@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 
 const Login = () => {
   //useContext
-  const { login, resetPassword } = useContext(ContexAPI);
+  const { login, resetPassword, setUser } = useContext(ContexAPI);
   // useRef
   const emailRef = useRef();
   // useLocation
@@ -24,7 +24,7 @@ const Login = () => {
     // login
     login(email, password)
       .then((result) => {
-        console.log(result.user);
+        setUser(result.user);
         toast.success("Login Successfully");
         navigate(location?.state ? location.state : '/');
       })

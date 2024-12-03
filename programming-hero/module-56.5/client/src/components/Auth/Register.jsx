@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 
 const Register = () => {
   // useContext
-  const { register, profile, setUser } = useContext(ContexAPI);
+  const { register, profile, setUser, setLoading } = useContext(ContexAPI);
   // useNavigate
   const navigate = useNavigate();
 
@@ -17,21 +17,33 @@ const Register = () => {
     const name = form.name.value;
     const email = form.email.value;
     const password = form.password.value;
+    const newUser = { name, email };
 
     // register
     register(email, password)
       .then((result) => {
         setUser(result.user);
 
+        // create user in DB
+        fetch("http://localhost:5000/users", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(newUser),
+        })
+          .then((res) => res.json())
+          .then((data) => console.log(data));
+
         // update profile
         profile({ displayName: name })
-        .then(()=>{
-          setUser({...result.user, displayName: name})
-          toast.success("Registration Successful");
-          navigate('/');
-        })
-        .catch(error => toast.error(error.message))
-
+          .then(() => {
+            setUser({ ...result.user, displayName: name });
+            setLoading(false);
+            toast.success("Registration Successful");
+            navigate("/");
+          })
+          .catch((error) => toast.error(error.message));
       })
       .catch((error) => toast.error(error.message));
   };

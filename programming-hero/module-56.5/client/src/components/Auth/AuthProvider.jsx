@@ -19,6 +19,8 @@ const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   // state for loading
   const [loading, setLoading] = useState(true);
+  // state for coffeUser
+  const [coffeUser, setCoffeUser] = useState(null);
 
   // register
   const register = (email, password) => {
@@ -64,13 +66,6 @@ const AuthProvider = ({ children }) => {
   }, [])
 
 
-
-
-
-
-
-  console.log(user);
-
   const contextValue = {
     user,
     setUser,
@@ -79,7 +74,10 @@ const AuthProvider = ({ children }) => {
     logout,
     profile,
     loading,
+    setLoading,
     resetPassword,
+    coffeUser,
+    setCoffeUser,
   };
   return (
     <div>
