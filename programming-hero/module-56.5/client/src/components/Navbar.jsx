@@ -8,10 +8,7 @@ const Navbar = () => {
         <NavLink to={"/"}>Home</NavLink>
       </li>
       <li className="text-lg font-semibold">
-        <NavLink to={"/add"}>Coffee</NavLink>
-      </li>
-      <li className="text-lg font-semibold">
-        <NavLink to={"/update"}>Update</NavLink>
+        <NavLink to={"/addCoffee"}>Add Coffee</NavLink>
       </li>
       <li className="text-lg font-semibold">
         <NavLink to={"/user"}>User</NavLink>
@@ -71,7 +68,7 @@ const Navbar = () => {
             </button>
           </Link>
 
-          <Link to={"/login"}>
+          <Link to={"/register"}>
             <button className="btn rounded rancho text-xl bg-[#c99d62] border-none hover:text-white hover:bg-transparent hover:outline hover:outline-1 hover:outline-white transition sm:px-6 duration-500">
               Sign Up
             </button>
