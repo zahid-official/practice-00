@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Page</title>
+    <!-- font-awesome -->
+    <script src="https://kit.fontawesome.com/348b10e1ec.js" crossorigin="anonymous"></script>
+    <!-- daisyUI cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <!-- tailwind cdn -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- tailwind custom config-->
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                clifford: '#da373d',
+                primary: '#b4f461',
+                secondary: '#111111B3',
+                third: '#1111110D',
+                'primary-hover': '#a6e751',
+              }
+            }
+          }
+        }
+      </script>
+    <!-- main css -->
+     <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header class="blog-header-area sticky top-0 backdrop-blur-sm z-10">
+        <!-- navbar -->
+        <div class="navbar md:flex-row flex-col justify-between items-center gap-5 py-8 sm:px-16 bg-[#f9f7f3] bg-opacity-90">
+            <div>
+                <button id="home-button" class="btn bg-primary hover:bg-primary-hover text-xl font-bold h-14 px-10">Home</button>
+            </div>
+            <div>
+              <a class="btn btn-ghost hover:bg-transparent sm:text-3xl text-xl font-bold"><img src="../images/1.logo.png" alt="logo" class="mr-2"> Donate Bangladesh</a>
+            </div>
+            <div>
+              <p class="text-xl font-bold text-secondary flex items-center gap-2"><img src="../images/2.coin.png" alt="coin"> <span id="main-balance">5500</span> BDT</p>
+            </div>
+        </div>
+    </header>
+    <!-- header-area-ends -->
+
+    <main class="blog-main-area container mx-auto my-20">
+        <!-- accordion -->
+        <div class="accordion space-y-8 mx-4">
+          <div class="accordion-title flex items-center gap-2">
+            <h2 class="sm:text-5xl text-3xl font-medium">Important FAQ</h2>
+            <img src="../images/6.faq.gif" alt="">  
+          </div>
+            <!-- card-1 -->
+            <div class="collapse collapse-arrow bg-base-200 sm:p-5">
+                <input type="radio" name="my-accordion-2" checked="checked" />
+                <div class="collapse-title text-xl font-medium">What is the Document Object Model (DOM)?</div>
+                <div class="collapse-content">
+                  <p>The Document Object Model (DOM) is a programming interface that represents HTML and XML documents as a tree structure. DOM allowing developers to access and change the contents, structure and styles of web pages using JavaScript.</p>
+                </div>
+            </div>
+
+            <!-- card-2 -->
+            <div class="collapse collapse-arrow bg-base-200 sm:p-5">
+                <input type="radio" name="my-accordion-2" />
+                <div class="collapse-title text-xl font-medium">How do you select an element from the DOM?</div>
+                <div class="collapse-content">
+                  <p>The most popular way to select an element from the DOM is using document.getElementById('id'). To do this, add an id to the selected element and grab it using document.getElementById('id')</p>
+                </div>
+            </div>
+
+            <!-- card-3 -->
+            <div class="collapse collapse-arrow bg-base-200 sm:p-5">
+                <input type="radio" name="my-accordion-2" />
+                <div class="collapse-title text-xl font-medium">What is event delegation in the context of the DOM and why is it useful?</div>
+                <div class="collapse-content">
+                  <p>Event delegation refers to adding an event listener to one element (the parent) that associates all child elements with that listener through event bubbling. This results in increased performance, better support for dynamic content and improved maintainability of code, contributing to web application development and effective event management.</p>
+                </div>
+            </div>
+
+            <!-- card-4 -->
+            <div class="collapse collapse-arrow bg-base-200 sm:p-5">
+                <input type="radio" name="my-accordion-2" />
+                <div class="collapse-title text-xl font-medium">How do you manipulate an element's attributes and styles using the DOM?</div>
+                <div class="collapse-content">
+                  <p>To change the attributes and styles of an element, you can access attributes through element.getAttribute('attrName') and change its properties with element.setAttribute('attrName', 'value') or remove the attribute with element.removeAttribute('attrName'). Similarly, you can change element.style to achieve the effect (for example element.style.color='red'). Here you can use element.classList to play the role of class. These methods can make the page more interactive and dynamic.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- header-area-ends -->
+    
+    <footer class="footer-area bg-[#f9f7f3] py-10 text-center mt-28">
+        <p class="text-base font-semibold mx-4">Together we can make a difference. Every donation counts</p>
+    </footer>
+
+    <!-- main js -->
+    <script src="blog.js"></script>
+</body>
+</html>
