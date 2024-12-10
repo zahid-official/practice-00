@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Milestone-05</title>
+    <!-- font-awesome -->
+    <script src="https://kit.fontawesome.com/348b10e1ec.js" crossorigin="anonymous"></script>
+    <!-- daisyUI cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <!-- tailwind cdn -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- tailwind custom config-->
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                clifford: '#da373d',
+                primary: '#b4f461',
+                secondary: '#111111B3',
+                'primary-hover': '#a6e751',
+              }
+            }
+          }
+        }
+      </script>
+    <!-- main css -->
+     <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header-area sticky top-0 backdrop-blur-sm">
+        <!-- navbar -->
+        <div class="navbar md:flex-row flex-col justify-between items-center gap-5 py-8 sm:px-16 bg-[#f9f7f3] bg-opacity-80">
+            <!-- blog-button -->
+            <div>
+                <button id="blog-button" class="btn  bg-primary hover:bg-primary-hover text-xl font-bold h-14 px-10">Blog</button>
+            </div>
+
+            <!-- logo -->
+            <div>
+              <a class="btn btn-ghost hover:bg-transparent sm:text-3xl text-xl font-bold"><img src="images/1.logo.png" alt="logo" class="mr-2"> Donate Bangladesh</a>
+            </div>
+
+            <!-- main-balance -->
+            <div>
+              <p class="text-xl font-bold text-secondary flex items-center gap-2"><img src="images/2.coin.png" alt="coin"> <span id="main-balance">5500</span> BDT</p>
+            </div>
+        </div>
+
+        <!-- button-area -->
+         <div class="button-area text-center space-x-3 pb-8 pt-20">
+            <button id="donation-button" class="btn btn-lg text-secondary text-xl font-bold bg-primary border-none">Donation</button>
+            <button id="history-button" class="btn btn-lg text-secondary text-xl font-bold bg-base-300 border-none">History</button>
+         </div>
+    </header>
+    <!-- header-area-ends -->
+
+    <main class="main-area container mx-auto min-h-[46vh]">
+        <!-- donation-area-->
+        <div id="donation-area">
+            <!-- noakhali-donation -->
+            <section class="noakhali-donate border-2 p-7 rounded-3xl mx-4 my-10">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+
+                    <!-- noakhali cover-photo -->
+                    <div class="noakhali-cover-photo">
+                        <img src="images/3.noakhali.png" alt="noakhali" class="w-full">
+                    </div>
+
+                    <!-- noakhali donation -->
+                    <div class="donate-noakhali space-y-5 py-4">
+                        <p class="text-base font-bold text-secondary flex items-center gap-1"><img src="images/2.coin.png" alt="coin"> <span id="noakhali-donation">0</span> BDT</p>
+
+                        <h2 class="text-xl font-bold">Donate for Flood at Noakhali, Bangladesh</h2>
+                        <p>The devastating floods that have recently struck Noakhali, Bangladesh, have incurred considerable damage, with thousands of families rendered homeless, and many without shelter, food, and clean drinking water. As communities struggle to respond to this disaster, there is an urgent need for support and relief. Your donations can make a meaningful impact when working with reputable organizations who would provide food, clean drinking water, and medical care directly to those affected. Additionally, your donations do not only provide immediate relief but aid in long-term recovery and rebuilding, giving families the time and resources they need to get back on their feet and restore their livelihoods. Every donation, regardless of its size, is meaningful and impacts the lives of those in need after natural disasters. </p>
+
+                        <input id="noakhali-input" type="text" placeholder="Write Donation Amount" class="input input-bordered w-full" />
+                        <button id="noakhali-button" class="btn text-lg bg-primary hover:bg-primary-hover w-full">Donate Now</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- feni-donation -->
+            <section class="feni-donate border-2 p-7 rounded-3xl mx-4 my-12">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+
+                    <!-- feni cover-photo -->
+                    <div class="feni-cover-photo">
+                        <img src="images/4.feni.png" alt="feni" class="w-full">
+                    </div>
+
+                    <!-- feni donation -->
+                    <div class="donate-feni space-y-5 py-4">
+                        <p class="text-base font-bold text-secondary flex items-center gap-1"><img src="images/2.coin.png" alt="coin"> <span id="feni-donation">0</span> BDT</p>
+
+                        <h2 class="text-xl font-bold">Donate for Flood Relief in Feni,Bangladesh</h2>
+                        <p>The recent floods in the Feni district of Bangladesh have caused widespread destruction leaving hundreds of families in desperate need of help. Houses are underwater, crops destroyed and infrastructure has been severely damaged, creating an urgent humanitarian crisis. Many families are without safe drinking water, food, and medical assistance and immediate help is essential. Your donations can help make a difference and offer support to those affected by this calamity. Donations will enable reputable organizations to provide, food packages, clean drinking water and medical assistance to those affected by this disaster. In addition, your support will also contribute to long-term recovery efforts, so households are able to rebuild their lives and livelihoods in the wake of the floods. Even the smallest donation will support our mission of ensuring that aid reaches those impacted the most. As people of compassion and solidarity, it is important that we unite with the people of Feni. Please consider to giving today to restore hope.</p>
+
+                        <input id="feni-input" type="text" placeholder="Write Donation Amount" class="input input-bordered w-full" />
+                        <button id="feni-button" class="btn text-lg bg-primary hover:bg-primary-hover w-full">Donate Now</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- quota-donation -->
+            <section class="quota-donate border-2 p-7 rounded-3xl mx-4 my-12">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+
+                    <!-- quota cover-photo -->
+                    <div class="quota-cover-photo">
+                        <img src="images/5.quota-protest.png" alt="quota" class="w-full">
+                    </div>
+
+                    <!-- quota donation -->
+                    <div class="donate-quota space-y-5 py-4">
+                        <p class="text-base font-bold text-secondary flex items-center gap-1"><img src="images/2.coin.png" alt="coin"> <span id="quota-donation">0</span> BDT</p>
+
+                        <h2 class="text-xl font-bold">Aid for Injured in the Quota Movement</h2>
+                        <p>The protests are led by the student wing of protesters, demanding reform of the system for government jobs allocations; clashes broke out in which some demonstrators were injured. A lot of body and face damage were sustained my rights activists along the students calling for an improved system. In the meantime, we also play a hand with quick help for those people affected by these events. Funding from donations can also pay for vital medical treatment, providing assistance for the injured and mental health support to victims traumatized by the violence. Moreover your contribution to the injured protesters will be recovered and there are many reputed organizations and initiatives which is helping them in their recovery. All help, be it money or alerting to the situation, is important. For they who have been wronged, let us stand in solidarity with them and support the battle to obtain justice for equality in the recruitment process. We can support them as they heal and go on to be other young people for whom the tragedy of gun violence will inform their activism.</p>
+                        
+                        <input id="quota-input" type="text" placeholder="Write Donation Amount" class="input input-bordered w-full" />
+                        <button id="quota-button" class="btn text-lg bg-primary hover:bg-primary-hover w-full">Donate Now</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- modal -->
+            <dialog id="my_modal_1" class="modal">
+                <div class="modal-box p-10 space-y-5 text-center">
+                    <h3 class="text-4xl font-bold text-[#1f2937]">Congrates!</h3>
+                    <div class="flex justify-center items-center">
+                        <img src="images/2.coin.png" alt="coin">
+                    </div>
+
+                    <p class="font-medium">You Have Donated for Human Kind</p>
+                    <p class="text-2xl font-bold text-[#1f2937]">Successfully</p>
+                    <div class="modal-action justify-center">
+                        <form method="dialog">
+                            <button class="btn bg-primary text-lg px-14 h-16">Close Confirmation</button>
+                        </form>
+                    </div>
+                </div>
+            </dialog>
+        </div>
+
+        <!-- history-area -->
+         <div id="history-area" class="hidden">
+            <ul id="donation-history"></ul>
+         </div>
+    </main>
+    <!-- main-area-ends -->
+
+    <footer class="footer-area bg-[#f9f7f3] py-10 text-center mt-28">
+        <p class="text-base font-semibold">Together we can make a difference. Every donation counts</p>
+    </footer>
+
+    <!-- main js -->
+     <script src="js/utility.js"></script>
+     <script src="js/script.js"></script>
+</body>
+</html>
