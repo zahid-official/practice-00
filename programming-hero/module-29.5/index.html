@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- getElementsByClassName -->
+    <div class="item">Item 1</div>
+    <div class="item">Item 2</div>
+    <div class="item">Item 3</div>
+
+    
+    <!-- querySelectorAll -->
+    <div class="my-class">
+        <p>This is a paragraph with <a href="#">a link</a>.</p>
+        <p>This is another paragraph with <a href="#">another link</a>.</p>
+    </div>
+    
+    <script>
+        // getElementsByClassName
+        const items = document.getElementsByClassName('item');
+        for(let item of items){
+            item.style.color = 'red';
+            item.style.fontSize = '35px';
+        }
+
+        // querySelectorAll
+        const links = document.querySelectorAll('.my-class p a');
+        for(let link of links){
+            link.style.color = 'green';
+            link.style.fontSize = '28px';
+        }
+    </script>
+</body>
+</html>
