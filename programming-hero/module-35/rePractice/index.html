@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Re-Practice</title>
+    <!-- cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.13/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                clifford: '#da373d',
+                primary: '#FF1F3D',
+              }
+            }
+          }
+        }
+    </script>
+</head>
+<body class="sm:mx-12 mx-4">
+    <header class="header-area py-7 border-b-2">
+        <div class="navbar flex justify-between sm:flex-row flex-col gap-5 bg-base-100">
+            <div class="nav-logo">
+              <img src="images/Logo.png" alt="logo">
+            </div>
+
+            <div class="nav-search">
+                <label class="input input-bordered flex items-center gap-2">
+                    <input id="search" type="text" class="grow" placeholder="Search" />
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 16 16"
+                      fill="currentColor"
+                      class="h-4 w-4 opacity-70">
+                      <path
+                        fill-rule="evenodd"
+                        d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
+                        clip-rule="evenodd" />
+                    </svg>
+                  </label>
+            </div>
+
+            <div class="nav-btn">
+              <button class="btn bg-primary text-white">Sort</button>
+            </div>
+          </div>
+    </header>
+
+    <main class="main-area">
+        <!-- category-buttons -->
+        <div id="btn-container" class="category-buttons flex justify-center gap-4 py-10"></div>
+        <!-- category-videos -->
+        <div id="video-container" class="category-videos grid lg:grid-cols-4 md:grid-cols-2 gap-6"></div>
+
+        <!-- modal -->
+        <!-- Open the modal using ID.showModal() method -->
+        <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+            <div class="modal-box">
+                <div id="modal"></div>
+
+                <div class="modal-action mt-0">
+                    <form method="dialog">
+                        <button class="btn">Close</button>
+                    </form>
+                </div>
+            </div>
+        </dialog>
+
+    </main>
+
+
+    <!-- script -->
+     <script src="script.js"></script>
+</body>
+</html>
