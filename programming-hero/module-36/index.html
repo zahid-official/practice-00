@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Milestone-06</title>
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/348b10e1ec.js" crossorigin="anonymous"></script>
+    <!-- daisyUI -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.13/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <!-- tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- custom config -->
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                clifford: '#da373d',
+                primary: '#0E7A81',
+                hoverBg: '#166d74',
+                textColor: '#5a5a5a',
+              }
+            }
+          }
+        }
+    </script>
+    <!-- main css -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header-area sm:mx-20 mx-4">
+        <!-- navbar -->
+        <div class="navbar bg-base-100 py-8">
+            <div class="navbar-start">
+                <div class="dropdown">
+                <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                    <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M4 6h16M4 12h8m-8 6h16" />
+                    </svg>
+                </div>
+                <ul
+                    tabindex="0"
+                    class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                    <li class="text-base font-semibold text-textColor hover:text-primary"><a>Home</a></li>
+                    <li class="text-base font-semibold text-textColor hover:text-primary"><a>Shop</a></li>
+                    <li class="text-base font-semibold text-textColor hover:text-primary"><a>Contact</a></li>
+                </ul>
+                </div>
+                <a class="btn btn-ghost hover:bg-transparent text-4xl font-extrabold"><img src="images/logo.webp" alt="logo">Peddy</a>
+            </div>
+            <div class="navbar-center hidden lg:flex">
+                <ul class="menu menu-horizontal px-1">
+                    <li class="text-base font-semibold text-textColor hover:text-primary"><a>Home</a></li>
+                    <li class="text-base font-semibold text-textColor hover:text-primary"><a>Shop</a></li>
+                    <li class="text-base font-semibold text-textColor hover:text-primary"><a>Contact</a></li>
+                </ul>
+            </div>
+            <div class="navbar-end">
+                <i class="fa-regular fa-circle-user text-3xl text-textColor hover:text-primary cursor-pointer"></i>
+            </div>
+        </div>
+
+        <!-- banner -->
+         <div class="banner py-16">
+            <div class="hero">
+                <div class="hero-content text-center">
+                  <div class="space-y-6">
+                    <p class="text-2xl font-bold text-textColor">Bringing Families Together🔥</p>
+                    <h1 class="md:text-7xl text-5xl font-extrabold">Your Path to Adoption <br class="lg:block hidden"> Starts Here</h1>
+                    <p class="text-lg">Begin your journey to find the perfect furry friend! Explore our diverse selection of pets waiting for a  loving <br class="lg:block hidden"> home  and discover your new companion today. Together, we can make a difference!</p>
+                    <a class="btn text-xl h-14 px-10 bg-primary hover:bg-hoverBg text-white" href="#category">View More</a>
+                    
+                    <div>
+                        <img src="images/pet.webp" alt="pet">
+                    </div>
+                  </div>
+                </div>
+              </div>
+         </div>
+    </header>
+
+    <main class="main-area py-16 sm:mx-16 mx-4" id="category">
+        <section class="pet-category">
+            <div class="section-title text-center space-y-4">
+                <h2 class="text-5xl font-extrabold">Adopt Your  Best Friend</h2>
+                <p class="text-lg">Open your heart and home to a loyal companion! Discover our adorable pets ready for adoption and <br class="lg:block hidden"> find your perfect match today. Your new best friend is waiting for you!</p>
+            </div>
+
+            <!-- btn container -->
+            <div id="btn-container" class="category-buttons gap-5 flex lg:justify-between justify-around flex-wrap my-10"></div>
+
+            <!-- sort -->
+            <div class="sort-part flex justify-between sm:flex-row flex-col gap-6 items-center">
+                <h3 class="text-2xl font-extrabold">Best Deal For you</h3>
+                <button id="sort-btn" class="btn h-14 bg-primary hover:bg-hoverBg text-white px-8 text-xl">Sort by Price</button>
+            </div>
+
+            <!-- spiner -->
+            <section class=" spiner-section flex justify-center py-8">
+              <span id="spiner" class="hidden loading loading-bars loading-lg"></span>
+            </section>
+        </section>
+
+        <section class="card-section py-16 gap-5 grid 2xl:grid-cols-4 lg:grid-cols-3">
+            <!-- card area -->
+            <div id="pet-container" class="card-container 2xl:col-span-3 lg:col-span-2 grid 2xl:grid-cols-3 md:grid-cols-2 gap-5 rounded-2xl"></div>
+
+            <!-- liked pets -->
+            <div class=" rounded-2xl">
+              <div id="like-container" class="liked-pets gap-4 grid sm:grid-cols-2 justify-items-center"></div>
+            </div>
+
+            <!-- modal -->
+             <!-- adopt modal -->
+            <dialog id="my_modal_5" class="modal modal-middle">
+              <div class="modal-box py-10">
+                <div id="modal-content" class="text-center space-y-4">
+                  <div class="flex justify-center items-center"><img class="h-14" src="images/handshake.gif" alt="gif"></div>
+                  <h2 class="text-4xl font-extrabold">Congrats</h2>
+                  <p class="text-lg font-semibold text-textColor">Adoptioon Process is Start for Your Pet</p>
+                  <p id="adoptCount" class="text-5xl font-extrabold"></p>
+                </div>
+              </div>
+            </dialog>
+
+
+            <!-- details modal -->
+            <dialog id="detailsModal" class="modal modal-middle">
+              <div class="modal-box p-3">
+                
+                <!-- modal body -->
+                <div id="detailsContainer"></div>
+
+                <!-- close btn -->
+                <div class="modal-action block">
+                  <form method="dialog">
+                    <button class="btn w-full bg-[#e6f1f2] text-primary text-base border-[#0E7A811A] hover:bg-primary hover:text-white">Close</button>
+                  </form>
+                </div>
+              </div>
+            </dialog>
+        </section>
+    </main>
+
+    <footer class="footer-area bg-[#131313]">
+        <div class="footer md:justify-items-center text-neutral-content py-16 container mx-auto">
+            <nav class="mx-6">
+                <a class="flex items-center justify-center gap-2 text-4xl font-extrabold mb-2"><img src="images/logo.webp" alt="logo">Peddy</a>
+                <a class="link link-hover text-base">Location: av. Washington 165, NY CA 54003</a>
+                <a class="link link-hover text-base">Phone: +31 85 964 47 25</a>
+                <a class="link link-hover text-base">Email: info@yourdomain.com</a>
+                <a class="link link-hover text-base">Openings hours: 9.00 AM - 5.00 PM</a>
+            </nav>
+    
+            <nav class="mx-6">
+              <h6 class="footer-title text-white">Useful Links</h6>
+              <a class="link link-hover text-base">About us</a>
+              <a class="link link-hover text-base">Animals</a>
+              <a class="link link-hover text-base">Contact</a>
+              <a class="link link-hover text-base">Foundation</a>
+            </nav>
+    
+            <nav class="mx-6">
+              <h6 class="footer-title">Drop a Message</h6>
+              <label class="input bg-[#1f1f1f] input-bordered flex items-center gap-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 16 16"
+                  fill="currentColor"
+                  class="h-4 w-4 opacity-70">
+                  <path
+                    d="M2.5 3A1.5 1.5 0 0 0 1 4.5v.793c.026.009.051.02.076.032L7.674 8.51c.206.1.446.1.652 0l6.598-3.185A.755.755 0 0 1 15 5.293V4.5A1.5 1.5 0 0 0 13.5 3h-11Z" />
+                  <path
+                    d="M15 6.954 8.978 9.86a2.25 2.25 0 0 1-1.956 0L1 6.954V11.5A1.5 1.5 0 0 0 2.5 13h11a1.5 1.5 0 0 0 1.5-1.5V6.954Z" />
+                </svg>
+                <input type="text" class="grow" placeholder="Email" />
+              </label>
+              <button class="btn h-14 bg-primary hover:bg-hoverBg border-none text-white px-14 mt-3 text-xl">Sort by Price</button>
+            </nav>
+        </div>
+    </footer>
+        
+    
+    <!-- script js -->
+     <script src="script.js"></script>
+</body>
+</html>
