@@ -1,0 +1,17 @@
+.three-columns-layout{
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+@media screen and (max-width: 992px) {
+    .three-columns-layout{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .three-columns-layout{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
