@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "brand": "Rolex",
+    "model": "Submariner",
+    "price": 8500,
+    "features": ["Water-resistant", "Automatic movement", "Ceramic bezel"]
+  },
+  {
+    "id": 2,
+    "brand": "Omega",
+    "model": "Speedmaster",
+    "price": 5200,
+    "features": ["Chronograph", "Manual movement", "Screw-in crown"]
+  },
+  {
+    "id": 3,
+    "brand": "Seiko",
+    "model": "Prospex Diver",
+    "price": 600,
+    "features": ["Solar-powered", "Water-resistant to 200m", "Luminous hands"]
+  },
+  {
+    "id": 4,
+    "brand": "Tag Heuer",
+    "model": "Carrera",
+    "price": 4200,
+    "features": ["Chronograph", "Automatic movement", "Date display"]
+  },
+  {
+    "id": 5,
+    "brand": "Casio",
+    "model": "G-Shock",
+    "price": 150,
+    "features": ["Shock-resistant", "Water-resistant", "Digital display"]
+  }
+]
