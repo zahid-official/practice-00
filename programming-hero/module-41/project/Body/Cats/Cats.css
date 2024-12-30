@@ -1,0 +1,11 @@
+.cats {
+  padding: 20px;
+  margin: 20px;
+  border-radius: 20px;
+  border: 1px solid lightseagreen;
+}
+
+.cats img {
+  height: 250px;
+  border-radius: 10px;
+}
