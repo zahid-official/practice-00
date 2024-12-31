@@ -1,0 +1,99 @@
+[
+    {
+      "recipe_image": "https://i.ibb.co.com/4d8Dbg0/freepicdownloader-com-delicious-chicken-stir-fry-with-sesame-seeds-bell-peppers-peas-savory-soy-sauc.jpg",
+      "recipe_id": 1,
+      "short_description": "A quick and delicious chicken stir fry with fresh vegetables.",
+      "recipe_name": "Chicken Stir Fry",
+      "ingredients": [
+        "550 g chicken",
+        "120 ml soy sauce",
+        "200 g basil leaf",
+        "400 g mushroom",
+        "150 g bell peppers",
+        "2 cloves garlic"
+      ],
+      "preparing_time": 30,
+      "calories": 320
+    },
+    {
+      "recipe_image": "https://i.ibb.co.com/rwgz5Qf/freepicdownloader-com-plate-spaghetti-with-bacon-cheese-it-normal.jpg",
+      "recipe_id": 2,
+      "recipe_name": "Spaghetti Carbonara",
+      "short_description": "Classic Italian pasta dish with creamy sauce and pancetta.",
+      "ingredients": [
+        "400 g spaghetti",
+        "200 g pancetta",
+        "2 large eggs",
+        "100 g Parmesan cheese",
+        "2 cloves garlic",
+        "Salt and pepper"
+      ],
+      "preparing_time": 25,
+      "calories": 450
+    },
+    {
+      "recipe_image": "https://i.ibb.co.com/p4TKFML/freepicdownloader-com-fresh-veggie-salad-with-tahini-cucumbers-tomatoes-bell-peppers-radishes-green.jpg",
+      "recipe_id": 3,
+      "recipe_name": "Veggie Salad",
+      "short_description": "A refreshing salad packed with colorful vegetables.",
+      "ingredients": [
+        "200 g lettuce",
+        "100 g cherry tomatoes",
+        "50 g cucumber",
+        "30 g feta cheese",
+        "Olive oil",
+        "Salt and pepper"
+      ],
+      "preparing_time": 15,
+      "calories": 150
+    },
+    {
+      "recipe_image": "https://i.ibb.co.com/1GXLWSm/freepicdownloader-com-tacos-with-meat-vegetables-mexican-food-style-stock-photos-normal.jpg",
+      "recipe_id": 4,
+      "recipe_name": "Beef Tacos",
+      "short_description": "Spicy beef tacos served with fresh salsa.",
+      "ingredients": [
+        "500 g ground beef",
+        "8 taco shells",
+        "100 g lettuce",
+        "100 g salsa",
+        "50 g cheddar cheese",
+        "2 tsp taco seasoning"
+      ],
+      "preparing_time": 20,
+      "calories": 400
+    },
+    {
+      "recipe_image": "https://i.ibb.co.com/ZVZxJ8T/freepicdownloader-com-10-easy-pancake-recipes-fluffy-breakfast-perfection-normal.jpg",
+      "recipe_id": 5,
+      "recipe_name": "Fluffy Pancakes",
+      "short_description": "Light and fluffy pancakes perfect for breakfast.",
+      "ingredients": [
+        "200 g all-purpose flour",
+        "2 tsp baking powder",
+        "1 tbsp sugar",
+        "2 large eggs",
+        "250 ml milk",
+        "Butter for cooking"
+      ],
+      "preparing_time": 20,
+      "calories": 220
+    },
+    {
+      "recipe_image": "https://i.ibb.co.com/qWzfw9V/freepicdownloader-com-chocolate-cake-with-chocolate-frosting-strawberries-plate-normal.jpg",
+      "recipe_id": 6,
+      "recipe_name": "Chocolate Cake",
+      "short_description": "Rich and moist chocolate cake for dessert lovers.",
+      "ingredients": [
+        "200 g dark chocolate",
+        "150 g butter",
+        "200 g sugar",
+        "4 large eggs",
+        "150 g flour",
+        "1 tsp baking powder"
+      ],
+      "preparing_time": 45,
+      "calories": 350
+    }
+  ]
+  
