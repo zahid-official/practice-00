@@ -24,12 +24,15 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-
         {/* navbar */}
-        <header><Navbar></Navbar></header>
+        <header>
+          <Navbar></Navbar>
+        </header>
 
         {/* outlet */}
-        <main className="min-h-[65vh] place-content-center place-items-center">{children}</main>
+        <main className="min-h-[65vh] place-content-center place-items-center">
+          {children}
+        </main>
 
         {/* footer */}
         <Footer></Footer>
