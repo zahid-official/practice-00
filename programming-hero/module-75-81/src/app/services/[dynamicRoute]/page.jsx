@@ -10,11 +10,11 @@
 */
 
 
-const DynamicRoute = ({params}) => {
-    const id = params.dynamicRoute;
+const DynamicRoute = async ({params}) => {
+    const {dynamicRoute} = await params;
     return (
         <div>
-            This is a dynamic route. Route Id is : {id}
+            This is a dynamic route. Route Id is : {dynamicRoute}
         </div>
     );
 };
