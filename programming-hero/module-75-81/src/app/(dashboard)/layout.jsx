@@ -13,6 +13,9 @@ const DashboardLayout = ({ children }) => {
         <li>
           <a>Sidebar Item 2</a>
         </li>
+        <li>
+          <a>Sidebar Item 3</a>
+        </li>
       </ul>
 
       {/* content */}
