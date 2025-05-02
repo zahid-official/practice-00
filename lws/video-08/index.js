@@ -23,5 +23,5 @@ console.log(d);
 
 const e = {"a": 1, "b": 3, "c": 5}
 console.log(e);
-e.a = 4;
+e.a = 4 + 1;
 console.log(e);
