@@ -15,9 +15,10 @@
   const yourAge = 32;
   //yourAge = 34;
 
-  /*Observation: 
-      - Reassignment allowed with var & let.
-      - But reassignment not allowed with const. It throw this error: TypeError: Assignment to constant variable.
+  /* Observation: 
+     - Reassignment is allowed with var and let.
+     - Reassignment is not allowed with const.
+     - Accessing const outside the block throws: TypeError: Assignment to constant variable.
   */
 }
 
@@ -29,10 +30,11 @@
   }
   // console.log(a, b);
 
-  /*Observation: 
-      - Variable a is accessible outside the block, because a declared with var which is a global scoped 
-      - But variable b isn't accessible, because b declared with let which is a block scoped. So accessing outside the block throw this error: result: ReferenceError: b is not defined 
-  */
+  /* Observation:
+     - Variable a is accessible outside the block because var is function-scoped (or globally scoped if not inside a function).
+     - Variable b is not accessible outside the block because let is block-scoped.
+     - Accessing b outside the block throws: ReferenceError: b is not defined
+*/
 }
 
 {
@@ -46,10 +48,10 @@
   const ram = 16;
   // const ram = 32;
 
-  /*Observation:
-    - var accept redeclaration and reassignment. 
-    - let accept only reassignment but not redeclaration. 
-    - Const don't accept redeclaration and reassignment.
+  /* Observation:
+     - var allows both redeclaration and reassignment.
+     - let allows reassignment but not redeclaration in the same scope.
+     - const allows neither redeclaration nor reassignment.
   */
 }
 
@@ -64,6 +66,12 @@
   obj.name = "Nahid";
   obj.age = 30;
   // console.log(obj);
+
+  /* Observation:
+     - A const object cannot be reassigned, but its internal properties can be changed.
+     - So changing name and age works without error.
+     - The object logs different values before and after the updates.
+  */
 }
 
 /*---------------------------------------------------------------------------------------------------
@@ -83,7 +91,27 @@
   // console.log(j);
 
   /* Observation: 
-      - var is accessible outside the loop. 
-      - But let is not accessible outside the loop. Accessing outside the loop throw this error: ReferenceError: j is not defined 
+     - var is accessible outside the loop because it is function-scoped (or global-scoped if not in a function).
+     - let is block-scoped, so it is not accessible outside the loop block.
+     - Accessing let outside the block throws: ReferenceError: j is not defined
+  */
+}
+
+{
+  // 7. (Function vs Block Scope) Create a function that has a block inside (if or for). Declare variables inside the block using var, let, and const. Try logging all of them outside the block but still within the function.
+  function company() {
+    if (true) {
+      var a = 25;
+      let b = 35;
+      const c = 45;
+    }
+    console.log(a, b, c);
+  }
+  company();
+
+  /* Observation: 
+     - var is accessible outside the block but within the same function. Because it is function-scoped.
+     - let and const are block-scoped, so they are not accessible outside the if-block.
+     - Accessing b or c outside the block throws: ReferenceError: b is not defined
   */
 }
