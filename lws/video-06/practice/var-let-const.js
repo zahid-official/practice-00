@@ -15,7 +15,10 @@
   const yourAge = 32;
   //yourAge = 34;
 
-  //Observation: Reassignment allowed with var & let but not allowed with const. It throw this error: TypeError: Assignment to constant variable.
+  /*Observation: 
+      - Reassignment allowed with var & let.
+      - But reassignment not allowed with const. It throw this error: TypeError: Assignment to constant variable.
+  */
 }
 
 {
@@ -26,7 +29,10 @@
   }
   // console.log(a, b);
 
-  /*Observation: a can access but b can't access. Because a declared with var which is a global scoped and let declared with let which is a block scoped. So trying to access that throw this error: result: ReferenceError: b is not defined */
+  /*Observation: 
+      - Variable a is accessible outside the block, because a declared with var which is a global scoped 
+      - But variable b isn't accessible, because b declared with let which is a block scoped. So accessing outside the block throw this error: result: ReferenceError: b is not defined 
+  */
 }
 
 {
@@ -40,7 +46,11 @@
   const ram = 16;
   // const ram = 32;
 
-  /*Observation: var accept redeclaration and reassignment. let accept only reassignment but not redeclaration. Const don't accept redeclaration and reassignment. */
+  /*Observation:
+    - var accept redeclaration and reassignment. 
+    - let accept only reassignment but not redeclaration. 
+    - Const don't accept redeclaration and reassignment.
+  */
 }
 
 {
@@ -49,11 +59,31 @@
     name: "Zahid",
     age: 25,
   };
-
-  console.log(obj);
+  // console.log(obj);
 
   obj.name = "Nahid";
   obj.age = 30;
+  // console.log(obj);
+}
 
-  console.log(obj);
+/*---------------------------------------------------------------------------------------------------
+                                Intermediate Tasks (not from this lesson)
+----------------------------------------------------------------------------------------------------- */
+
+{
+  // 6. (Loop Scope) Write a for loop using var and another using let. Inside the loop, log the variable. Then log it outside the loop and see what happens.
+  for (var i = 1; i <= 5; i++) {
+    // console.log(i);
+  }
+  // console.log(i);
+
+  for (let j = 1; j <= 5; j++) {
+    // console.log(j);
+  }
+  // console.log(j);
+
+  /* Observation: 
+      - var is accessible outside the loop. 
+      - But let is not accessible outside the loop. Accessing outside the loop throw this error: ReferenceError: j is not defined 
+  */
 }
