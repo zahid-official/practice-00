@@ -14,7 +14,7 @@
 
   const yourAge = 32;
   //yourAge = 34;
-  
+
   //Observation: Reassignment allowed with var & let but not allowed with const. It throw this error: TypeError: Assignment to constant variable.
 }
 
@@ -44,4 +44,16 @@
 }
 
 {
+  // 5. (Object with const) Create a const object with properties like name and age. Change the values of the properties. Log the object before and after.
+  const obj = {
+    name: "Zahid",
+    age: 25,
+  };
+
+  console.log(obj);
+
+  obj.name = "Nahid";
+  obj.age = 30;
+
+  console.log(obj);
 }
