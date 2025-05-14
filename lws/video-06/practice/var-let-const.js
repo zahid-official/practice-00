@@ -105,7 +105,7 @@
       let b = 35;
       const c = 45;
     }
-    console.log(a, b, c);
+    // console.log(a, b, c);
   }
   company();
 
@@ -113,5 +113,21 @@
      - var is accessible outside the block but within the same function. Because it is function-scoped.
      - let and const are block-scoped, so they are not accessible outside the if-block.
      - Accessing b or c outside the block throws: ReferenceError: b is not defined
+  */
+}
+
+{
+  // 8. (const with arrays) Declare a const array of your favorite fruits. Add and remove elements using array methods like .push() or .pop(). Log the array before and after.
+  const fruits = ["Apple", "Orange", "Mango", "Banana"];
+  console.log(fruits);
+
+  fruits.pop();
+  fruits.push("Coconut");
+  console.log(fruits);
+
+  /* Observation: 
+     - A const array cannot be reassigned to a different array or value, but its elements can still be modified.
+     - Methods like .push() and .pop() work on const arrays, allowing to add or remove elements.
+     - The reference to the array itself remains constant, but its contents are mutable.
   */
 }
