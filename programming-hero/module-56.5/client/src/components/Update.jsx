@@ -19,7 +19,7 @@ const Update = () => {
     const photo = form.photo.value;
     const coffee = { name, chef, price, taste, category, details, photo };
 
-    fetch(`http://localhost:5000/update/${id}`, {
+    fetch(`https://coffee-espresso-sigma.vercel.app/update/${id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

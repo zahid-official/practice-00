@@ -19,7 +19,7 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>,
-        loader: ()=>fetch('http://localhost:5000/coffees'),
+        loader: ()=>fetch('https://coffee-espresso-sigma.vercel.app/coffees'),
       },
       {
         path: '/addCoffee',
@@ -32,7 +32,7 @@ const router = createBrowserRouter([
       {
         path: '/update/:id',
         element: <Update></Update>,
-        loader: ({params}) => fetch(`http://localhost:5000/update/${params.id}`)
+        loader: ({params}) => fetch(`https://coffee-espresso-sigma.vercel.app/update/${params.id}`)
       },
       {
         path: '/login',
@@ -45,7 +45,7 @@ const router = createBrowserRouter([
       {
         path: '/updateUsers/:id',
         element: <PrivateRoute><UpdateUsers></UpdateUsers></PrivateRoute>,
-        loader: ({params}) => fetch(`http://localhost:5000/updateUsers/${params.id}`)
+        loader: ({params}) => fetch(`https://coffee-espresso-sigma.vercel.app/updateUsers/${params.id}`)
       },
       
     ]

@@ -10,7 +10,7 @@ const User = () => {
 
   // read coffeeUser from DB
   useEffect(() => {
-    fetch("http://localhost:5000/users")
+    fetch("https://coffee-espresso-sigma.vercel.app/users")
       .then((res) => res.json())
       .then((data) => setCoffeUser(data));
   }, [setCoffeUser]);
@@ -27,7 +27,7 @@ const User = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/users/${id}`, {
+        fetch(`https://coffee-espresso-sigma.vercel.app/users/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

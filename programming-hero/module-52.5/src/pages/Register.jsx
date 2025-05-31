@@ -1,10 +1,13 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthContext";
 
 const Register = () => {
   // context API
-  const { setUser, register } = useContext(AuthContext);
+  const { setUser, register, update } = useContext(AuthContext);
+
+  //use navigate
+  const navigate = useNavigate();
 
   // state for error
   const [error, setError] = useState({});
@@ -13,11 +16,13 @@ const Register = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-
-
     //get input value
     const form = new FormData(event.target);
     const name = form.get("userName");
+    const photo = form.get('photo');
+    const email = form.get("email");
+    const password = form.get("password");
+
 
     //error
     setError({...error, name: ''})
@@ -25,16 +30,17 @@ const Register = () => {
       setError({...error, name: "Name must be more then 5 letters"});
       return;
     }
-    // const photo = form.get('photo');
-    const email = form.get("email");
-    const password = form.get("password");
 
     //register account
     register(email, password)
       .then((result) => {
         setUser(result.user);
+        update({displayName: name, photoURL: photo})
+        .then(()=> navigate('/'))
+        .catch(erra => console.log(erra))
+        console.log(result)
       })
-      .catch((err) => console.log(err));
+      .catch(err => console.log(err))
   };
 
   return (
@@ -71,7 +77,6 @@ const Register = () => {
                 name="photo"
                 placeholder="photo-url"
                 className="input input-bordered"
-                required
               />
             </div>
 

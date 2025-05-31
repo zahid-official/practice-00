@@ -27,7 +27,7 @@ const Register = () => {
         const newUser = { name, email, registrationTime};
 
         // create user in DB
-        fetch("http://localhost:5000/users", {
+        fetch("https://coffee-espresso-sigma.vercel.app/users", {
           method: "POST",
           headers: {
             "content-type": "application/json",

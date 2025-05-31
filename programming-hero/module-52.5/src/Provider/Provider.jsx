@@ -7,6 +7,7 @@ import {
   onAuthStateChanged,
   signInWithEmailAndPassword,
   signOut,
+  updateProfile,
 } from "firebase/auth";
 
 const Provider = ({ children }) => {
@@ -33,6 +34,11 @@ const Provider = ({ children }) => {
     return signOut(authentication);
   }
 
+  // update profile
+  const update = (data)=>{
+    return updateProfile(authentication.currentUser, data)
+  }
+
 
   //observer
   useEffect(() => {
@@ -53,6 +59,7 @@ const Provider = ({ children }) => {
     register,
     login,
     logOut,
+    update,
   };
   return (
     <div>

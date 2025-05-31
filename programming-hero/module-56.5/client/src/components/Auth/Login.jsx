@@ -28,7 +28,7 @@ const Login = () => {
         const loginTime = result.user?.metadata?.lastSignInTime;
         const updateData = {email, loginTime};
 
-        fetch(`http://localhost:5000/updateUsers`, {
+        fetch(`https://coffee-espresso-sigma.vercel.app/updateUsers`, {
           method: "PATCH",
           headers: {
             'content-type' : 'application/json',

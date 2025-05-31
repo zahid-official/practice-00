@@ -23,7 +23,7 @@ const UpdateUsers = () => {
     // update profile
     profile({ displayName: name })
       .then(() => {
-        fetch(`http://localhost:5000/updateUsers/${id}`, {
+        fetch(`https://coffee-espresso-sigma.vercel.app/updateUsers/${id}`, {
           method: "PUT",
           headers: {
             "content-type": "application/json",
