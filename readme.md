@@ -218,7 +218,6 @@ Throughout my learning journey, I've built **numerous real-world projects** and 
 
 20. **Scholarship Management System**: Comprehensive educational platform with student applications, admin approval workflows, document uploads, payment integration, user dashboards, and complete scholarship lifecycle management. Built with full-stack architecture and modern development practices.
 
-
 21. **Car Doctor Pro**: Professional automotive service platform built with Next.js framework, NextAuth for authentication, server-side rendering, API routes, SSLCOMMERZ payment gateway integration, GitHub collaboration workflows, and modern React patterns. Features service booking, mechanic assignment, payment processing, and customer management system.
 
 ### 📊 Project Statistics
@@ -311,10 +310,10 @@ If you're starting your web development journey, feel free to explore my practic
 
 I'm always excited to connect with fellow developers and share learning experiences!
 
-- **GitHub**: [Your GitHub Profile]
-- **LinkedIn**: [Your LinkedIn Profile]
-- **Email**: [Your Email]
-- **Portfolio**: [Your Portfolio Website]
+- **Email**: [zahid.official8@gmail.com](mailto:zahid.official8@gmail.com)
+- **GitHub**: [github.com/zahid-official](https://github.com/zahid-official)
+- **Portfolio**: [zahid-official.netlify.app](https://zahid-official.netlify.app/)
+- **LinkedIn**: [linkedin.com/in/zahid-web](https://www.linkedin.com/in/zahid-web)
 
 ---
 
