@@ -1,4 +1,4 @@
-# 🚀 My Web Development Practice Journey
+# 🚀 My Web Development Journey
 
 Welcome to my comprehensive web development practice repository! This is where I've documented my learning journey through various technologies, one step at a time. Every commit here represents hours of practice, learning, and growth.
 
